@@ -49,6 +49,13 @@ export const buttonVariants = cva(
           "hover:bg-base-200",
           "focus:ring-base-content",
         ],
+        "outline-white": [
+          "bg-transparent",
+          "border-base-100",
+          "text-base-100",
+          "hover:text-base-200",
+          "focus:ring-base-content",
+        ],
         error: [
           "bg-error",
           "text-error-content",

@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import footerIcon from '../../../public/images/footer-icon.svg';
-import { BsTiktok, BsFacebook, BsInstagram } from 'react-icons/bs';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import footerIcon from "../../../public/images/footer-icon.svg";
+import { BsTiktok, BsFacebook, BsInstagram } from "react-icons/bs";
 
 interface FooterLink {
   linkTo: string;
@@ -10,19 +10,19 @@ interface FooterLink {
 }
 
 const footerLinks: FooterLink[] = [
-  { linkTo: '/', siteName: 'Contact' },
-  { linkTo: '/', siteName: 'Careers' },
-  { linkTo: '/', siteName: 'Privacy' },
-  { linkTo: '/', siteName: 'Cookies policy' },
-  { linkTo: '/', siteName: 'Help' },
-  { linkTo: '/', siteName: 'FAQ’s' },
-  { linkTo: '/', siteName: 'Newsletter' },
-  { linkTo: '/', siteName: 'Brand' },
+  { linkTo: "/", siteName: "Contact" },
+  { linkTo: "/", siteName: "Careers" },
+  { linkTo: "/", siteName: "Privacy" },
+  { linkTo: "/", siteName: "Cookies policy" },
+  { linkTo: "/", siteName: "Help" },
+  { linkTo: "/", siteName: "FAQ’s" },
+  { linkTo: "/", siteName: "Newsletter" },
+  { linkTo: "/", siteName: "Brand" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="footer-container  h-full w-full">
+    <footer className="footer-container mt-auto h-full w-full">
       <div className="flex items-center justify-center pt-24">
         <Image src={footerIcon} alt="Banner Image" />
       </div>
