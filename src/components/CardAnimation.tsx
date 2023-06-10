@@ -46,15 +46,20 @@ const cards: CardData[] = [
       " Извидничката програма која ја уживаат децата, младите и возрасните волонтери се заснова на три широки принципи кои ги претставуваат основните верувања на движењето.Обврска кон себе - Развој на личниот целосен потенцијал, односно достигнување на потполните физички, интелектуални, општествени и духовни можности како поединец",
   },
 ];
+interface CardProps {
+  cardData: CardData;
+}
+const Card: React.FC<CardProps> = ({ cardData }) => {
+  const {
+    id,
+    frontImgSrc,
+    frontTitle,
+    frontText,
+    backImgSrc,
+    backTitle,
+    backText,
+  } = cardData;
 
-const Card: React.FC<CardData> = ({
-  frontImgSrc,
-  frontTitle,
-  frontText,
-  backImgSrc,
-  backTitle,
-  backText,
-}) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleCardClick = () => {
@@ -134,16 +139,7 @@ const CardGrid: React.FC = () => {
   return (
     <div className=" flex flex-wrap justify-center">
       {cards.map((card) => (
-        <Card
-          id={card.id}
-          key={card.id}
-          frontImgSrc={card.frontImgSrc}
-          frontTitle={card.frontTitle}
-          frontText={card.frontText}
-          backImgSrc={card.backImgSrc}
-          backTitle={card.backTitle}
-          backText={card.backText}
-        />
+        <Card key={card.id} cardData={card} />
       ))}
     </div>
   );
