@@ -1,5 +1,6 @@
 import Layout from "@/layouts/Layout";
 import "@/styles/globals.css";
+import "../styles/Footer.css";
 import type { AppProps } from "next/app";
 import { Inter } from "next/font/google";
 

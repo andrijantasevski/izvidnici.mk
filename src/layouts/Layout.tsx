@@ -1,3 +1,4 @@
+import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 
 type LayoutProps = {
@@ -9,6 +10,7 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen">
       <Header />
       {children}
+      <Footer />
     </div>
   );
 }
