@@ -20,8 +20,7 @@ const inputVariants = cva(
         primary: [
           "text-base-100",
           "border-base-100",
-          "focus:ring-primary-focus",
-          "focus:border-primary-focus",
+          "focus:ring-primary-content",
           "placeholder:text-base-300",
         ],
         error: [
