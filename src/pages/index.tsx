@@ -30,7 +30,7 @@ export default function Home() {
           <div className="flex w-full flex-col-reverse gap-10 lg:flex-col lg:gap-4">
             <div className="flex w-full items-center justify-center gap-6 lg:justify-end">
               <Button variant="white" uppercase className="px-8">
-                <Link href="/">зачлени се</Link>
+                <Link href="/zacleni-se">зачлени се</Link>
               </Button>
 
               <Button
@@ -39,7 +39,7 @@ export default function Home() {
                 asChild
                 className="px-8"
               >
-                <Link href="/">донирај</Link>
+                <Link href="/donacija">донирај</Link>
               </Button>
             </div>
 
