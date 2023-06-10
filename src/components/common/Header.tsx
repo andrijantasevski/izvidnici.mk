@@ -155,7 +155,7 @@ const Header = () => {
               className="text-white"
               priority
             />
-            <span className="font-bold text-base-100">Извидници</span>
+            <span className="font-bold text-base-100 lg:hidden">Извидници</span>
           </Link>
 
           <div className="hidden items-center justify-between gap-7 text-base-100 lg:flex">

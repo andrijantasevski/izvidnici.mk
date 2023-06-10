@@ -22,7 +22,7 @@ const footerLinks: FooterLink[] = [
 
 const Footer = () => {
   return (
-    <footer className="relative mt-auto w-full bg-primary text-base-100">
+    <footer className="relative mt-auto hidden w-full bg-primary text-base-100 lg:block">
       <Image
         src="/img/background-images/background-footer.svg"
         width={1940}
@@ -32,9 +32,14 @@ const Footer = () => {
       />
 
       <div className="absolute inset-x-0 bottom-6 mx-auto flex w-11/12 max-w-2xl flex-col gap-6">
-        <div className="flex w-full items-center justify-center">
-          <Image src={footerIcon} alt="Banner Image" />
-        </div>
+        <Link href="/" className="flex w-full items-center justify-center">
+          <Image
+            width={67}
+            height={89}
+            src="/images/footer-icon.svg"
+            alt="Banner Image"
+          />
+        </Link>
 
         <ul className="flex w-full flex-wrap justify-center gap-2">
           {footerLinks.map((link, index) => (
