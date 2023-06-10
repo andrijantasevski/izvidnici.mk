@@ -64,6 +64,7 @@ module.exports = {
       backgroundImage: {
         "landing-first-section":
           "url('/img/background-images/background-landing-page-first-section.jpg')",
+        footer: "url('/img/background-images/background-footer.svg')",
       },
     },
   },

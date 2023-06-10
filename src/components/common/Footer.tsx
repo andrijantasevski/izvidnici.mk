@@ -22,43 +22,58 @@ const footerLinks: FooterLink[] = [
 
 const Footer = () => {
   return (
-    <footer className="footer-container mt-auto h-full w-full">
-      <div className="flex items-center justify-center pt-24">
-        <Image src={footerIcon} alt="Banner Image" />
-      </div>
-      <div className="mx-auto  my-10 w-6/12">
-        <ul className="flex w-full flex-wrap justify-center">
+    <footer className="relative mt-auto w-full bg-primary text-base-100">
+      <Image
+        src="/img/background-images/background-footer.svg"
+        width={1940}
+        height={723}
+        alt="Позадина footer"
+        className="w-full"
+      />
+
+      <div className="absolute inset-x-0 bottom-6 mx-auto flex w-11/12 max-w-2xl flex-col gap-6">
+        <div className="flex w-full items-center justify-center">
+          <Image src={footerIcon} alt="Banner Image" />
+        </div>
+
+        <ul className="flex w-full flex-wrap justify-center gap-2">
           {footerLinks.map((link, index) => (
-            <li key={index} className="mx-2 my-1">
-              <Link href={link.linkTo}>
-                <p className="text-slate-100 hover:text-slate-50">
-                  {link.siteName}
-                </p>
+            <li key={index}>
+              <Link className="hover:text-base-200" href={link.linkTo}>
+                {link.siteName}
               </Link>
             </li>
           ))}
         </ul>
-      </div>
-      <div className="mx-auto sm:w-6/12">
-        <div className="mt-4 flex justify-between">
-          <div className="flex items-center">
-            <BsTiktok className="mr-4 text-2xl text-slate-100" />
-            <BsFacebook className="mr-4 text-2xl text-slate-100" />
-            <BsInstagram className="text-2xl text-slate-100" />
+
+        <div className="flex justify-between">
+          <div className="flex items-center gap-4">
+            <Link href="/">
+              <BsTiktok className="text-2xl hover:text-base-200" />
+            </Link>
+
+            <Link href="/">
+              <BsFacebook className="text-2xl hover:text-base-200" />
+            </Link>
+
+            <Link href="/">
+              <BsInstagram className="text-2xl hover:text-base-200" />
+            </Link>
           </div>
+
           <ul className="flex items-center">
             <li className="mr-4">
-              <a href="mailto:sim@scout.org.mk" className="text-slate-100">
-                sim@scout.org.mk
-              </a>
+              <a href="mailto:sim@scout.org.mk">sim@scout.org.mk</a>
             </li>
             <li>
-              <a href="tel:+023112254" className="text-slate-100">
-                02 311 2254
-              </a>
+              <a href="tel:+023112254">02 311 2254</a>
             </li>
           </ul>
         </div>
+
+        <p className="text-center">
+          © {new Date().getFullYear()} Сојуз на Извидници на Македонија
+        </p>
       </div>
     </footer>
   );
