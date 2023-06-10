@@ -1,14 +1,15 @@
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import Link from "next/link";
+import { IconArrowNarrowDown } from "@tabler/icons-react";
 
 export default function Home() {
   return (
     <main>
-      <section className="h-screen bg-landing-first-section bg-cover bg-no-repeat py-10">
-        <div className="container mx-auto flex h-full flex-col items-center justify-between">
+      <section className="h-screen bg-landing-first-section bg-cover bg-center bg-no-repeat py-10">
+        <div className="mx-auto flex h-full w-11/12 max-w-screen-xl flex-col items-center justify-between">
           <div />
-          <div className="-mt-32 flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-4">
             <Image
               src="/img/logos/logo-landing-page-first-section.svg"
               width={117}
@@ -41,7 +42,10 @@ export default function Home() {
             </div>
 
             <div className="flex items-center justify-center">
-              <button className="text-base-100">Scroll down</button>
+              <button className="flex flex-col items-center justify-center text-base-100">
+                <IconArrowNarrowDown />
+                <span>Scroll down</span>
+              </button>
             </div>
           </div>
         </div>

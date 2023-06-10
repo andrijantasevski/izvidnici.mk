@@ -5,7 +5,7 @@ import Image from "next/image";
 const headerLinks = [
   {
     title: "за нас",
-    href: "/zanas",
+    href: "/za-nas",
   },
   {
     title: "програми",

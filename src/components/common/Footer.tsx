@@ -22,11 +22,12 @@ const footerLinks: FooterLink[] = [
 
 const Footer = () => {
   return (
-    <footer className="footer-container mt-auto h-full w-full">
+    <footer className="mt-auto h-[1500px] w-full bg-footer bg-cover bg-center bg-no-repeat">
       <div className="flex items-center justify-center pt-24">
         <Image src={footerIcon} alt="Banner Image" />
       </div>
-      <div className="mx-auto  my-10 w-6/12">
+
+      <div className="mx-auto my-10 w-6/12">
         <ul className="flex w-full flex-wrap justify-center">
           {footerLinks.map((link, index) => (
             <li key={index} className="mx-2 my-1">
