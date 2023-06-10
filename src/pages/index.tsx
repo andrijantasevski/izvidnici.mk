@@ -24,7 +24,6 @@ export default function Home() {
               priority
             />
           </div>
-
           <div className="flex w-full flex-col gap-4">
             <div className="flex w-full items-center justify-end gap-6">
               <Button variant="white" uppercase className="px-8">
