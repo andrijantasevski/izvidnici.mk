@@ -61,6 +61,10 @@ module.exports = {
          */
         "error-content": "#450a0a",
       },
+      backgroundImage: {
+        "landing-first-section":
+          "url('/img/background-images/background-landing-page-first-section.jpg')",
+      },
     },
   },
   plugins: [],
