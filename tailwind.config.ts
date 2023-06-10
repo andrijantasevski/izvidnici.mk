@@ -65,7 +65,15 @@ module.exports = {
         "landing-first-section":
           "url('/img/background-images/background-landing-page-first-section.jpg')",
         footer: "url('/img/background-images/background-footer.svg')",
+        "razvigorci-hero": "url('/img/background-images/background-razvigorci-hero.png')",
+        "group-left": "url('/img/razvigorci/Group-left.png')",
+        "group-right": "url('/img/razvigorci/Group-right.png')",
+        
       },
+      height: {
+        '120': '120px'
+      }, 
+
     },
   },
   plugins: [],
