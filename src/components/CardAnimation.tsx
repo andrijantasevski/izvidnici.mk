@@ -125,7 +125,7 @@ const Card: React.FC<CardProps> = ({ cardData }) => {
           </motion.div>
           <motion.div className="absolute bottom-0 right-0">
             <motion.img
-              src="./img/cards/svg/back.svg"
+              src="./img/cards/svg/back-card.svg"
               alt={frontTitle}
               className="z-0 h-44 w-full object-cover"
             />
