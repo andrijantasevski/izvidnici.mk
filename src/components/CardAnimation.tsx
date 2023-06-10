@@ -54,45 +54,55 @@ const Card: React.FC<CardData> = ({
   };
 
   return (
-    <div className="relative mx-4 my-4 h-96 w-80" onClick={handleCardClick}>
-      <motion.div
-        className={`card-front flex flex-col items-center justify-start rounded-[17px] bg-primary pb-4 text-center shadow-lg ${
-          isFlipped ? "hidden" : ""
-        }`}
-        initial={{ rotateY: 0 }}
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <motion.img
-          src={frontImgSrc}
-          alt={frontTitle}
-          className="mb-2 h-64 w-full rounded-lg object-cover"
-        />
-        <div className="px-3 py-10">
-          <h2 className="text-2xl font-bold text-white">{frontTitle}</h2>
-          <hr className="mx-auto my-2 h-[2px] w-2/6 border-0 bg-secondary" />
-          <h5 className=" h-64 overflow-hidden text-base text-white">
-            {frontText}
+    <>
+      <div className="relative mx-4 my-4 h-96 w-80" onClick={handleCardClick}>
+        <motion.div
+          className={` relative flex flex-col items-center justify-start rounded-[17px] bg-primary pb-4 text-center shadow-lg ${
+            isFlipped ? "hidden" : ""
+          }`}
+          initial={{ rotateY: 0 }}
+          animate={{ rotateY: isFlipped ? 180 : 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.img
+            src={frontImgSrc}
+            alt={frontTitle}
+            className="mb-2 h-64 w-full rounded-lg object-cover"
+          />
+          <motion.div className="z-50 px-3 py-10">
+            <h2 className="text-2xl font-bold text-white">{frontTitle}</h2>
             <hr className="mx-auto my-2 h-[2px] w-2/6 border-0 bg-secondary" />
-          </h5>
-        </div>
-      </motion.div>
-      <motion.div
-        className={`card-back absolute flex flex-col items-center justify-center rounded-lg bg-white p-2 text-center shadow-lg ${
-          isFlipped ? "" : "hidden"
-        }`}
-        initial={{ rotateY: 180 }}
-        animate={{ rotateY: isFlipped ? 0 : 180 }}
-        transition={{ duration: 0.5 }}
-      >
-        <motion.img
-          src={backImgSrc}
-          alt={backText}
-          className="mb-2 h-40 w-full object-cover"
-        />
-        <span className="text-lg">{backText}</span>
-      </motion.div>
-    </div>
+            <h5 className=" h-64 overflow-hidden text-base text-white">
+              {frontText}
+              <hr className="mx-auto my-2 h-[2px] w-2/6 border-0 bg-secondary" />
+            </h5>
+          </motion.div>
+          <motion.div className=" absolute bottom-0 left-0">
+            <motion.img
+              src="./img/cards/svg/svg-cards.svg"
+              alt={frontTitle}
+              className=" z-0 h-44 w-full object-cover"
+            />
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className={`card-back absolute flex flex-col items-center justify-center rounded-lg bg-white p-2 text-center shadow-lg ${
+            isFlipped ? "" : "hidden"
+          }`}
+          initial={{ rotateY: 180 }}
+          animate={{ rotateY: isFlipped ? 0 : 180 }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.img
+            src={backImgSrc}
+            alt={backText}
+            className="mb-2 h-40 w-full object-cover"
+          />
+          <span className="text-lg">{backText}</span>
+        </motion.div>
+      </div>
+    </>
   );
 };
 const CardGrid: React.FC = () => {
