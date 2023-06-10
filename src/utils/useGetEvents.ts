@@ -27,6 +27,6 @@ export default function useGetEvents() {
 
   return useQuery<{ events: EventType[] }>({
     queryFn: fetchStudents,
-    queryKey: ["students"],
+    queryKey: ["events"],
   });
 }
