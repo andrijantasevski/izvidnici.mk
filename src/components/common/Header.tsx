@@ -50,7 +50,11 @@ const Header = () => {
 
         <div className="hidden items-center justify-between gap-7 text-base-100 lg:flex">
           {headerLinks.map((headerLink) => (
-            <Link href={headerLink.href} className="font-semibold uppercase">
+            <Link
+              key={headerLink.href}
+              href={headerLink.href}
+              className="font-semibold uppercase"
+            >
               {headerLink.title}
             </Link>
           ))}
