@@ -1,9 +1,10 @@
 import Button from "@/components/ui/Button";
+import Input from "@/components/ui/Input";
 import Link from "next/link";
 
 export default function Design() {
   return (
-    <main className="gap-6 bg-gray-200 p-10">
+    <main className="gap-6 bg-black p-56">
       <div>
         <Button variant="primary" size="base" rounding="square" uppercase>
           Hello World!
@@ -18,6 +19,8 @@ export default function Design() {
           <Link href="/">Home</Link>
         </Button>
       </div>
+
+      <Input id="hi" errorMessage="hi" placeholder="hi" />
     </main>
   );
 }
