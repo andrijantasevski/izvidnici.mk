@@ -43,7 +43,7 @@ interface Props
     VariantProps<typeof inputVariants> {
   id: string;
   errorMessage: string;
-  placeholder: string;
+  placeholder?: string;
   /**
    * Icon to show before the placeholder/input text.
    */
