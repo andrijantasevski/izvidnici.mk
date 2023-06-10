@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/Select";
 import Image from "next/image";
+import useSendDonation from "@/utils/useSendDonation";
 
 export type DonateFormInputs = {
   fullName: string;
@@ -37,7 +38,7 @@ export default function Donacija() {
     control,
   } = useForm<DonateFormInputs>();
 
-  const { mutate, status } = useSignUpScout();
+  const { mutate, status } = useSendDonation();
 
   const onSubmit: SubmitHandler<DonateFormInputs> = (data) => {
     mutate(data, {
