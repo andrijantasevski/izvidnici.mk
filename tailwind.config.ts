@@ -31,7 +31,7 @@ module.exports = {
         /**
          * Foreground content color to use on secondary color
          */
-        "secondary-content": "#FDF1F2",
+        "secondary-content": "#200405",
         /**
          * Base color of page, used for blank backgrounds
          */
@@ -48,6 +48,18 @@ module.exports = {
          * Foreground content color to use on base color
          */
         "base-content": "#000",
+        /**
+         * Error color
+         */
+        error: "#ef4444",
+        /**
+         * Error color when focused
+         */
+        "error-focus": "#dc2626",
+        /**
+         * Foreground content color to use on error color
+         */
+        "error-content": "#450a0a",
       },
     },
   },
