@@ -46,9 +46,11 @@ const cards: CardData[] = [
       " Извидничката програма која ја уживаат децата, младите и возрасните волонтери се заснова на три широки принципи кои ги претставуваат основните верувања на движењето.Обврска кон себе - Развој на личниот целосен потенцијал, односно достигнување на потполните физички, интелектуални, општествени и духовни можности како поединец",
   },
 ];
+
 interface CardProps {
   cardData: CardData;
 }
+
 const Card: React.FC<CardProps> = ({ cardData }) => {
   const {
     id,
@@ -135,6 +137,7 @@ const Card: React.FC<CardProps> = ({ cardData }) => {
     </>
   );
 };
+
 const CardGrid: React.FC = () => {
   return (
     <div className=" flex flex-wrap justify-center">

@@ -2,6 +2,7 @@ import Button from "@/components/ui/Button";
 import Image from "next/image";
 import Link from "next/link";
 import { IconArrowNarrowDown } from "@tabler/icons-react";
+import CardGrid from "@/components/landing-page/CardAnimation";
 
 export default function Home() {
   return (
@@ -50,6 +51,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <CardGrid />
     </main>
   );
 }
