@@ -26,8 +26,9 @@ export default function Home() {
               priority
             />
           </div>
-          <div className="flex w-full flex-col gap-4">
-            <div className="flex w-full items-center justify-end gap-6">
+
+          <div className="flex w-full flex-col-reverse gap-10 lg:flex-col lg:gap-4">
+            <div className="flex w-full items-center justify-center gap-6 lg:justify-end">
               <Button variant="white" uppercase className="px-8">
                 <Link href="/">зачлени се</Link>
               </Button>
@@ -43,9 +44,9 @@ export default function Home() {
             </div>
 
             <div className="flex items-center justify-center">
-              <button className="flex flex-col items-center justify-center text-base-100">
-                <IconArrowNarrowDown />
-                <span>Scroll down</span>
+              <button className="flex flex-col items-center justify-center gap-2 text-base-100 hover:text-base-200">
+                <IconArrowNarrowDown className="h-7 w-7" />
+                <span className="text-xl">Scroll down</span>
               </button>
             </div>
           </div>

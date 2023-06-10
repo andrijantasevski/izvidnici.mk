@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
     "@radix-ui/react-slot": "^1.0.2",
     "@tabler/icons-react": "^2.22.0",
     "@types/node": "20.2.5",
