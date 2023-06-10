@@ -22,24 +22,24 @@ const footerLinks: FooterLink[] = [
 
 const Footer = () => {
   return (
-    <footer className="footer-container container">
-      <div className="box">
-        <div className="m-5 flex items-center justify-center">
-          <Image src={footerIcon} alt="Banner Image" />
-        </div>
-        <div className="navigation-links my-10">
-          <ul className="flex flex-wrap justify-center">
-            {footerLinks.map((link, index) => (
-              <li key={index} className="mx-2 my-1">
-                <Link href={link.linkTo}>
-                  <p className="text-slate-100 hover:text-slate-50">
-                    {link.siteName}
-                  </p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <footer className="footer-container  h-full w-full">
+      <div className="flex items-center justify-center pt-24">
+        <Image src={footerIcon} alt="Banner Image" />
+      </div>
+      <div className="mx-auto  my-10 w-6/12">
+        <ul className="flex w-full flex-wrap justify-center">
+          {footerLinks.map((link, index) => (
+            <li key={index} className="mx-2 my-1">
+              <Link href={link.linkTo}>
+                <p className="text-slate-100 hover:text-slate-50">
+                  {link.siteName}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="mx-auto sm:w-6/12">
         <div className="mt-4 flex justify-between">
           <div className="flex items-center">
             <BsTiktok className="mr-4 text-2xl text-slate-100" />
