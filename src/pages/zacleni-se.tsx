@@ -10,8 +10,8 @@ import useSignUpScout from "@/utils/useSignUpScout";
 import { toast } from "react-hot-toast";
 
 export type SignUpFormInputs = {
-  fullName: string;
-  age: string;
+  full_name: string;
+  age: number;
   address: string;
   email: string;
 };
@@ -301,12 +301,12 @@ export default function ZacleniSe() {
                 Име
               </Label>
               <Input
-                {...register("fullName", { required: true })}
+                {...register("full_name", { required: true })}
                 type="text"
                 id="fullNameInput"
                 placeholder="Име и презиме"
                 errorMessage="Внесете име"
-                variant={errors.fullName ? "error" : "primary"}
+                variant={errors.full_name ? "error" : "primary"}
               />
             </div>
 
@@ -315,7 +315,7 @@ export default function ZacleniSe() {
                 Возраст
               </Label>
               <Input
-                {...register("age", { required: true })}
+                {...register("age", { required: true, valueAsNumber: true })}
                 type="number"
                 id="ageInput"
                 placeholder="Возраст"
