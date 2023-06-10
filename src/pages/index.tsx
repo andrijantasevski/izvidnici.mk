@@ -5,6 +5,7 @@ import { IconArrowNarrowDown } from "@tabler/icons-react";
 import CardGrid from "@/components/landing-page/CardAnimation";
 import PuzzleAnimation from "@/components/landing-page/PuzzleAnimation";
 import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const ref = useRef<HTMLDivElement>(null);
@@ -69,6 +70,302 @@ export default function Home() {
         <CardGrid />
         <div>
           <PuzzleAnimation />
+        </div>
+        <div className=" text-center">
+          <h2 className="font text-xl font-semibold text-primary-content md:text-5xl">
+            ЗАЧЛЕНИ СЕ!
+          </h2>
+          <div className=" mx-auto w-11/12 py-10 md:w-9/12">
+            <p className=" text-center text-lg leading-10 text-primary-content">
+              Со повеќе од 57 милиони активни членови во 173 земји и територии,
+              извидништвото е едно од најголемите младински движења во светот!
+              Од стреличарење и планинарење до јавно говорење и обуки за
+              лидерство, извидниците учат преку работа и развиваат вештини кои
+              ќе им помогнат да напредуваат и да станат агенти на позитивни
+              промени во нашиот свет.  Контактирајте го вашиот локален
+              извиднички одред за да дознаете како да го започнете вашето
+              извидничко патешествие.
+            </p>
+          </div>
+        </div>
+        <div className=" pb-10">
+          <div className="mx-auto mt-10 grid w-11/12 grid-cols-1 gap-6 sm:grid-cols-2 md:w-10/12 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            <div className="relative">
+              <div className="mb-5">
+                <Image
+                  className="w-full rounded-lg object-cover shadow-lg"
+                  src="/img/landing-page/lending-1.png"
+                  alt="Picture 1"
+                  width={267}
+                  height={424}
+                />
+              </div>
+              <div className="mt-2 border-b-2 border-t-2 border-secondary py-2 text-center">
+                <h4 className="text-lg font-medium text-primary-content">
+                  РАЗВИГОРЦИ
+                </h4>
+                <p className="text-sm text-primary-content">
+                  Деца на возраст 7-10 години
+                </p>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="mb-5">
+                <Image
+                  className="w-full rounded-lg object-cover shadow-lg"
+                  src="/img/landing-page/lending-2.png"
+                  alt="Picture 1"
+                  width={267}
+                  height={424}
+                />
+              </div>
+              <div className="mt-2 border-b-2 border-t-2 border-secondary py-2 text-center">
+                <h4 className="text-lg font-medium text-primary-content">
+                  ИЗВИДНИЦИ
+                </h4>
+                <p className="text-sm text-primary-content">
+                  Деца на возраст 11-14 години
+                </p>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="mb-5">
+                <Image
+                  className="w-full rounded-lg object-cover shadow-lg"
+                  src="/img/landing-page/lending-3.png"
+                  alt="Picture 1"
+                  width={267}
+                  height={424}
+                />
+              </div>
+              <div className="mt-2 border-b-2 border-t-2 border-secondary py-2 text-center">
+                <h4 className="text-lg font-medium text-primary-content">
+                  ИСТРАЖУВАЧИ
+                </h4>
+                <p className="text-sm text-primary-content">
+                  Млади на возраст 15-17 години
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="mb-5">
+                <Image
+                  className="w-full rounded-lg object-cover shadow-lg"
+                  src="/img/landing-page/lending-4.png"
+                  alt="Picture 1"
+                  width={267}
+                  height={424}
+                />
+              </div>
+              <div className="mt-2 border-b-2 border-t-2 border-secondary py-2 text-center">
+                <h4 className="text-lg font-medium text-primary-content">
+                  РОВЕРИ
+                </h4>
+                <p className="text-sm text-primary-content">
+                  Млади на возраст 18-29 години
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="mb-5">
+                <Image
+                  className="w-full rounded-lg object-cover shadow-lg"
+                  src="/img/landing-page/lending-5.png"
+                  alt="Picture 1"
+                  width={267}
+                  height={424}
+                />
+              </div>
+              <div className="mt-2 border-b-2 border-t-2 border-secondary py-2 text-center">
+                <h4 className="text-lg font-medium text-primary-content">
+                  СЕНИОРИ
+                </h4>
+                <p className="text-sm text-primary-content">
+                  Возрасни над 30 години
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section className="relative w-full">
+          <Image
+            src="/img/cards/svg/lending-big.svg"
+            alt="Big Image"
+            width={2307}
+            height={1700}
+            className="object-cover"
+          />
+
+          <div className="absolute left-1/2 top-16 w-full -translate-x-1/2 -translate-y-1/2 transform text-center text-white md:top-[40%] lg:w-1/2">
+            <h5 className="mx-auto w-11/12  text-xs leading-5 md:w-8/12 md:text-lg">
+              „ Давам чесен збор,
+              <br />  дека ќе ја запознаам и сакам својата татковина,  дека ќе
+              ја прифатам духовната реалност  и ќе го барам нејзиното потполно
+              значење.  Дека секогаш ќе им помагам на луѓето,  дека ќе живеам и
+              работам по извидничките закони.“
+            </h5>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0  mt-5 text-center text-white">
+            <p className="text-xl font-semibold md:text-5xl ">
+              НОВА АВАНТУРА ТЕ ЧЕКА!
+            </p>
+          </div>
+          <div className="absolute inset-0 top-24 flex items-center justify-center md:top-80">
+            <motion.div
+              className="p-2"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <motion.img
+                src="/img/cards/svg/icon-lending.svg"
+                alt="icon"
+                className=" mx-auto w-3/6"
+              />
+            </motion.div>
+          </div>
+        </section>
+        <div className=" bg-black text-center">
+          <div className=" mx-auto w-11/12 md:w-7/12">
+            <p className="text-sm leading-10 text-primary-content">
+              Независно од полот, возраста, позадината или определбата секој
+              заинтересиран може да се вклучи и придонесе во најголемото
+              младинско образовно движење во Македонија, и тоа на еден или
+              повеќе начини:
+            </p>
+          </div>
+          <div className="bg-gradient-to-r from-black to-[#1C362D]">
+            <div className="mx-auto mt-10 grid w-11/12 grid-cols-1 gap-6 py-10 sm:grid-cols-2 md:w-10/12 md:grid-cols-3 lg:grid-cols-4 ">
+              <div className="relative">
+                <div className="mb-10">
+                  <Image
+                    className="w-full rounded-lg object-cover shadow-lg"
+                    src="/img/cards/leadind-cards-1.png"
+                    alt="Picture 1"
+                    width={413}
+                    height={688}
+                  />
+                </div>
+                <div className="mt-2  border-t-2 border-secondary py-2 text-center">
+                  <h4 className="text-lg font-medium text-primary-content">
+                    ЗАЧЛЕНИ СЕ
+                  </h4>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="mb-10">
+                  <Image
+                    className="w-full rounded-lg object-cover shadow-lg"
+                    src="/img/cards/leading-cards-2.png"
+                    alt="Picture 1"
+                    width={413}
+                    height={688}
+                  />
+                </div>
+                <div className="mt-2  border-t-2 border-secondary py-2 text-center">
+                  <h4 className="text-lg font-medium text-primary-content">
+                    ВОЛОНТИРАЈ
+                  </h4>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="mb-10">
+                  <Image
+                    className="w-full rounded-lg object-cover shadow-lg"
+                    src="/img/cards/leading-cards-3.png"
+                    alt="Picture 1"
+                    width={413}
+                    height={688}
+                  />
+                </div>
+                <div className="mt-2  border-t-2 border-secondary py-2 text-center">
+                  <h4 className="text-lg font-medium text-primary-content">
+                    ДОНИРАЈ
+                  </h4>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="mb-10">
+                  <Image
+                    className="w-full rounded-lg object-cover shadow-lg"
+                    src="/img/cards/leading-cards-4.png"
+                    alt="Picture 1"
+                    width={413}
+                    height={688}
+                  />
+                </div>
+                <div className="mt-2  border-t-2 border-secondary py-2 text-center">
+                  <h4 className="text-lg font-medium text-primary-content">
+                    ОТВОРИ ОДРЕД
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div className=" text-center">
+              <h2 className="font text-xl font-semibold text-primary-content md:text-5xl">
+                НАСТАНИ
+              </h2>
+              <div className=" mx-auto w-11/12 py-10 md:w-7/12">
+                <p className=" text-center text-lg leading-10 text-primary-content">
+                  СИМ, како и повеќе од 17 извиднички одреди ширум Македонија на
+                  годишно ниво организираат еднодневни и повеќедневни
+                  активности, хајкови, тренинзи, обуки, работилници и кампување.
+                  Придружи ни се!
+                </p>
+              </div>
+            </div>
+            <section className="mx-auto w-11/12 py-10 md:w-10/12">
+              <div className="container mx-auto flex flex-wrap ">
+                <div className="w-full md:w-1/2">
+                  <div className="relative mr-5">
+                    <Image
+                      className="w-full rounded-lg object-cover shadow-lg"
+                      src="/img/landing-page/img-left-lending.png"
+                      alt="Picture 1"
+                      width={848}
+                      height={888}
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 px-4 py-2 text-center text-white">
+                      <h4 className="text-lg">СЛЕДЕН НАСТАН</h4>
+                      <p>02,03,2023 | Велес</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex w-full flex-col md:w-1/2">
+                  <div className="mb-5">
+                    <div className="relative">
+                      <Image
+                        className="w-full rounded-lg object-cover shadow-lg"
+                        src="/img/landing-page/img-lending-top.png"
+                        alt="Picture 1"
+                        width={848}
+                        height={432}
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 px-4 py-2 text-center text-white">
+                        <p className="text-lg">НАСТАН</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="relative">
+                      <Image
+                        className="w-full rounded-lg object-cover shadow-lg"
+                        src="/img/landing-page/img-lending-botom.png"
+                        alt="Picture 1"
+                        width={848}
+                        height={432}
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 px-4 py-2 text-center text-white">
+                        <p className="text-lg">НАСТАНИ</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </main>
