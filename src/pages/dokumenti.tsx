@@ -103,8 +103,6 @@ export default function Dokumenti() {
       };
     });
 
-  console.log(transformedDocuments);
-
   const { data: categories } = useGetDocumentCategories();
 
   const uniqueCategories =
@@ -196,6 +194,7 @@ export default function Dokumenti() {
               onChange={(e) => setSearchText(e.currentTarget.value)}
               leadingIcon={<IconSearch />}
               placeholderOffset="pl-10"
+              placeholder="Пребарајте"
               id=""
               errorMessage=""
               className="w-72 rounded-2xl bg-white text-base-content"
