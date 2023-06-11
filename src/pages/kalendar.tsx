@@ -7,6 +7,7 @@ import useGetEvents, { EventType } from "@/utils/useGetEvents";
 import { format } from "date-fns";
 import Link from "next/link";
 import { env } from "@/env.mjs";
+import Head from "next/head";
 
 const months = [
   { monthValue: 0, monthName: "Јануари" },
@@ -210,97 +211,103 @@ export default function Kalendar() {
   }, [router]);
 
   return (
-    <main className="bg-primary text-base-100">
-      <section className="relative">
-        <Image
-          src="/img/kalendar/hero-kalendar.jpg"
-          width={1920}
-          height={536}
-          alt="Два извидника покажуваат знак со нивните раце."
-          className="h-[50vh] w-full object-cover brightness-90 lg:h-[60vh]"
-          priority
-        />
+    <>
+      <Head>
+        <title>Календар</title>
+      </Head>
 
-        <h1 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-5xl text-base-100 2xl:text-6xl">
-          Календар
-        </h1>
-      </section>
+      <main className="bg-primary text-base-100">
+        <section className="relative">
+          <Image
+            src="/img/kalendar/hero-kalendar.jpg"
+            width={1920}
+            height={536}
+            alt="Два извидника покажуваат знак со нивните раце."
+            className="h-[50vh] w-full object-cover brightness-50 lg:h-[60vh]"
+            priority
+          />
 
-      <section className="bg-base-100 py-20">
-        <div className="mx-auto w-11/12 max-w-screen-xl">
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-6">
-            {months.map((month) => (
-              <Button
-                onClick={() => selectMonth(month.monthValue)}
-                size="lg"
-                rounding="pill"
-                key={month.monthValue}
-                className="p-5"
-                variant={
-                  selectedMonth === month.monthValue ? "secondary" : "primary"
-                }
-              >
-                {month.monthName}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
+          <h1 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-5xl text-base-100 2xl:text-6xl">
+            Календар
+          </h1>
+        </section>
 
-      <section className="bg-base-100">
-        <Image
-          src="/img/kalendar/pattern.svg"
-          width={1920}
-          height={111}
-          alt="Pattern"
-          className="w-full"
-          priority
-        />
-      </section>
-
-      <section className="bg-primary py-20">
-        <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-10">
-          <h2 className="text-center text-3xl font-bold uppercase text-base-100">
-            {currentMonth.monthName}
-          </h2>
-
-          <div className="flex flex-col items-center justify-center gap-6 lg:flex-row">
-            <Button
-              onClick={decrementMonth}
-              disabled={selectedMonth === 0}
-              variant={selectedMonth === 0 ? "disabled" : "secondary"}
-              className="w-full items-center gap-2 lg:w-56"
-            >
-              <IconChevronLeft className="h-5 w-5" />
-              Претходен месец
-            </Button>
-
-            <Button
-              onClick={incrementMonth}
-              disabled={selectedMonth === 11}
-              variant={selectedMonth === 11 ? "disabled" : "secondary"}
-              className="w-full items-center gap-2 lg:w-56"
-            >
-              Следен месец
-              <IconChevronRight className="h-5 w-5" />
-            </Button>
-          </div>
-
-          {eventsPerMonth && eventsPerMonth.length > 0 && (
-            <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
-              {eventsPerMonth.map((event) => (
-                <Event event={event} key={event.id} />
+        <section className="bg-base-100 py-20">
+          <div className="mx-auto w-11/12 max-w-screen-xl">
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-6">
+              {months.map((month) => (
+                <Button
+                  onClick={() => selectMonth(month.monthValue)}
+                  size="lg"
+                  rounding="pill"
+                  key={month.monthValue}
+                  className="p-5"
+                  variant={
+                    selectedMonth === month.monthValue ? "secondary" : "primary"
+                  }
+                >
+                  {month.monthName}
+                </Button>
               ))}
             </div>
-          )}
+          </div>
+        </section>
 
-          {eventsPerMonth && eventsPerMonth.length === 0 && (
-            <div className="text-center text-lg">
-              Нема настани за месец {currentMonth.monthName}
+        <section className="bg-base-100">
+          <Image
+            src="/img/kalendar/pattern.svg"
+            width={1920}
+            height={111}
+            alt="Pattern"
+            className="w-full"
+            priority
+          />
+        </section>
+
+        <section className="bg-primary py-20">
+          <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-10">
+            <h2 className="text-center text-3xl font-bold uppercase text-base-100">
+              {currentMonth.monthName}
+            </h2>
+
+            <div className="flex flex-col items-center justify-center gap-6 lg:flex-row">
+              <Button
+                onClick={decrementMonth}
+                disabled={selectedMonth === 0}
+                variant={selectedMonth === 0 ? "disabled" : "secondary"}
+                className="w-full items-center gap-2 lg:w-56"
+              >
+                <IconChevronLeft className="h-5 w-5" />
+                Претходен месец
+              </Button>
+
+              <Button
+                onClick={incrementMonth}
+                disabled={selectedMonth === 11}
+                variant={selectedMonth === 11 ? "disabled" : "secondary"}
+                className="w-full items-center gap-2 lg:w-56"
+              >
+                Следен месец
+                <IconChevronRight className="h-5 w-5" />
+              </Button>
             </div>
-          )}
-        </div>
-      </section>
-    </main>
+
+            {eventsPerMonth && eventsPerMonth.length > 0 && (
+              <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
+                {eventsPerMonth.map((event) => (
+                  <Event event={event} key={event.id} />
+                ))}
+              </div>
+            )}
+
+            {eventsPerMonth && eventsPerMonth.length === 0 && (
+              <div className="text-center text-lg">
+                Нема настани за месец {currentMonth.monthName}
+              </div>
+            )}
+          </div>
+        </section>
+      </main>
+    </>
   );
 }

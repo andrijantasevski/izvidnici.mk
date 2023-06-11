@@ -83,7 +83,9 @@ function StoryLineItem({ storyLineItem, idx }: StoryLineItemProps) {
 const ZaNas = () => {
   return (
     <>
-      <Head>За нас</Head>
+      <Head>
+        <title>За нас</title>
+      </Head>
       <section className="relative">
         <Image
           src="/img/background-images/about-hero.png"

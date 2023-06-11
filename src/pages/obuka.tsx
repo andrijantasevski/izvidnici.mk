@@ -10,10 +10,11 @@ export default function obuka() {
   return (
     <>
       <Head>
-        <title>Obuka</title>
+        <title>Обука</title>
       </Head>
+
       <main>
-        <section className="relative w-full   ">
+        <section className="relative w-full">
           <div className="relative">
             <Image
               src="/img/obuka-page/obuka.png"
@@ -32,7 +33,8 @@ export default function obuka() {
             </h1>
           </div>
         </section>
-        <section className="relative my-10 flex h-[365px] w-full  items-center justify-center md:my-0 ">
+
+        <section className="relative my-10 flex h-[365px] w-full  items-center justify-center md:my-0">
           <div className="mx-auto w-11/12 max-w-screen-xl text-center text-lg md:w-7/12">
             Покрај областите на личен развој предвидени за категориите
             развигорци и извидници, за нашите истражувачи, ровери и сениори има

@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 export interface MapItemInterface {
   href: string;
   alt: string;
@@ -14,7 +14,25 @@ interface Props {
 }
 const Map = ({ HandleOnCityClick }: Props) => {
   return (
-    <div className="mt-20 flex w-full  justify-center bg-primary   py-20">
+    <div className="relative flex w-full justify-center bg-primary py-20">
+      <Image
+        src="/img/zacleni-se/scout-types-pattern.svg"
+        width={320}
+        height={320}
+        priority
+        alt="Pattern"
+        className="absolute bottom-0 left-0 hidden lg:block"
+      />
+
+      <Image
+        src="/img/cards/svg/back-card.svg"
+        width={320}
+        height={320}
+        priority
+        alt="Pattern"
+        className="absolute bottom-0 right-0 hidden lg:block"
+      />
+
       <Image
         alt="mkdImage"
         src="https://reklama5.mk/Content/images/newmapmkd.png"
