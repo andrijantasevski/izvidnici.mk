@@ -7,7 +7,7 @@ import { GetStaticProps, NextPage } from "next";
 import { env } from "@/env.mjs";
 import { format } from "date-fns";
 
-type EventType = {
+export type EventType = {
   id: number;
   picture: string;
   title: string;
@@ -304,7 +304,7 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
                   uppercase
                   asChild
                 >
-                  <Link href={`/event/${eventOne.id}`}>следен настан</Link>
+                  <Link href={`/nastani/${eventOne.id}`}>следен настан</Link>
                 </Button>
               </div>
               <p>
@@ -330,7 +330,7 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
                   uppercase
                   asChild
                 >
-                  <Link href={`/event/${eventTwo.id}`}>следен настан</Link>
+                  <Link href={`/nastani/${eventTwo.id}`}>следен настан</Link>
                 </Button>
               </div>
             </div>
@@ -351,7 +351,7 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
                   uppercase
                   asChild
                 >
-                  <Link href={`/event/${eventThree.id}`}>следен настан</Link>
+                  <Link href={`/nastani/${eventThree.id}`}>следен настан</Link>
                 </Button>
               </div>
             </div>

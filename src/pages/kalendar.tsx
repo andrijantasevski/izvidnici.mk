@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import useGetEvents, { EventType } from "@/utils/useGetEvents";
-import { compareAsc, format } from "date-fns";
+import { format } from "date-fns";
+import Link from "next/link";
 
 const months = [
   { monthValue: 0, monthName: "Јануари" },
@@ -121,10 +122,10 @@ type EventProps = {
 
 function Event({ event }: EventProps) {
   return (
-    <div className="flex w-full">
+    <Link href={`/nastani/${event.id}`} className="flex w-full">
       <div className="flex w-4/12 flex-col items-center justify-center gap-1 rounded-bl-lg rounded-tl-lg border border-transparent bg-secondary p-2 lg:w-3/12">
-        <p>from: {event.start_date}</p>
-        <p>to: {event.end_date}</p>
+        <p>од: {format(new Date(event.start_date), "dd/MM/yy")}</p>
+        <p>до: {format(new Date(event.end_date), "dd/MM/yy")}</p>
       </div>
 
       <div className="flex w-8/12 items-center justify-between gap-4 rounded-br-2xl rounded-tr-2xl border border-transparent bg-base-100 pl-4 text-base-content lg:w-9/12">
@@ -135,14 +136,14 @@ function Event({ event }: EventProps) {
         </div>
 
         <Image
-          className="hidden lg:block"
+          className="hidden h-full lg:block"
           src="/img/kalendar/event-example.png"
           width={120}
           height={120}
           alt={""}
         />
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -211,11 +212,11 @@ export default function Kalendar() {
           width={1920}
           height={536}
           alt="Два извидника покажуваат знак со нивните раце."
-          className="w-full brightness-90"
+          className="h-[50vh] w-full object-cover brightness-90 lg:h-[60vh]"
           priority
         />
 
-        <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl text-base-100 2xl:text-6xl">
+        <h1 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-5xl text-base-100 2xl:text-6xl">
           Календар
         </h1>
       </section>
@@ -248,6 +249,7 @@ export default function Kalendar() {
           height={111}
           alt="Pattern"
           className="w-full"
+          priority
         />
       </section>
 
