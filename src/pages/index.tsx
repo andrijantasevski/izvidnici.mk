@@ -360,7 +360,7 @@ export default function Home({ events }: RazvigorciPageProps) {
                         uppercase
                         asChild
                       >
-                        <Link href={`/event/${eventOne.id}`}>
+                        <Link href={`/nastani/${eventOne.id}`}>
                           следен настан
                         </Link>
                       </Button>
@@ -389,7 +389,7 @@ export default function Home({ events }: RazvigorciPageProps) {
                         uppercase
                         asChild
                       >
-                        <Link href={`/event/${eventTwo.id}`}>настан</Link>
+                        <Link href={`/nastani/${eventTwo.id}`}>настан</Link>
                       </Button>
                     </div>
                   </div>
@@ -410,7 +410,7 @@ export default function Home({ events }: RazvigorciPageProps) {
                         uppercase
                         asChild
                       >
-                        <Link href={`/event/${eventThree.id}`}>настан</Link>
+                        <Link href={`/nastani/${eventThree.id}`}>настан</Link>
                       </Button>
                     </div>
                   </div>

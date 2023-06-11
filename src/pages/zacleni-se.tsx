@@ -61,7 +61,7 @@ function ZacleniSeVideoSection() {
           width={319}
           height={205}
           alt="Pattern"
-          className="absolute top-0 rotate-180"
+          className="absolute top-0 hidden rotate-180 lg:block"
           priority
         />
 
@@ -95,7 +95,7 @@ function ZacleniSeVideoSection() {
           width={319}
           height={205}
           alt="Pattern"
-          className="absolute bottom-0 right-0"
+          className="absolute bottom-0 right-0 hidden lg:block"
           priority
         />
       </section>
@@ -224,7 +224,7 @@ export default function ZacleniSe() {
 
         <ZacleniSeVideoSection />
 
-        <section className="flex justify-between pt-10">
+        <section className="flex justify-center pt-10 lg:justify-between">
           <Image
             className="hidden lg:block"
             src="/img/zacleni-se/pattern-white-section-left.svg"
@@ -263,7 +263,7 @@ export default function ZacleniSe() {
           <div className="relative z-10 mx-auto w-11/12 max-w-screen-xl">
             <div className="flex flex-col items-center justify-between gap-10 lg:flex-row">
               {scoutTypes.map((scoutType) => (
-                <div key={scoutType.image} className="flex flex-col gap-4">
+                <div key={scoutType.image} className="flex  flex-col gap-4">
                   <Image
                     width={267}
                     height={424}
