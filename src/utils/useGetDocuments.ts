@@ -49,8 +49,6 @@ export default function useGetDocuments(
     }
   }
 
-  console.log(`${env.NEXT_PUBLIC_API_BASE_URL}/api/documents${query}`);
-
   async function fetchDocuments() {
     const response = await fetch(`${env.NEXT_PUBLIC_API_BASE_URL}${query}`);
 
