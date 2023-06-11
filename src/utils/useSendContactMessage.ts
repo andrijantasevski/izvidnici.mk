@@ -1,16 +1,20 @@
+import { env } from "@/env.mjs";
 import { ContactFormInputs } from "@/pages/kontakt";
 import { useMutation } from "@tanstack/react-query";
 
 export default function useSendContactMessage() {
   async function sendContactMessage(formData: ContactFormInputs) {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    const response = await fetch(
+      `${env.NEXT_PUBLIC_API_BASE_URL}/api/contacts`,
+      {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
 
     if (!response.ok) {
       throw new Error("There was an error signing up!");

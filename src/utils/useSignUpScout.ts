@@ -5,7 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 export default function useSignUpScout() {
   async function signUpScout(formData: SignUpFormInputs) {
     const response = await fetch(
-      `${env.NEXT_PUBLIC_API_BASE_URL}/api/store-contact`,
+      `${env.NEXT_PUBLIC_API_BASE_URL}/api/applicants`,
       {
         method: "POST",
         body: JSON.stringify(formData),
