@@ -200,7 +200,7 @@ export default function ZacleniSe() {
             priority
           />
 
-          <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl text-base-100 2xl:text-6xl">
+          <h1 className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl text-base-100 md:top-1/2 2xl:text-6xl">
             Зачлени се
           </h1>
         </section>
