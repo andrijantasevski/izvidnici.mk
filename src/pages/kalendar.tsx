@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import useGetEvents, { EventType } from "@/utils/useGetEvents";
+import { compareAsc, format } from "date-fns";
 
 const months = [
   { monthValue: 0, monthName: "Јануари" },
@@ -19,99 +21,99 @@ const months = [
   { monthValue: 11, monthName: "Декември" },
 ];
 
-const events = [
-  {
-    from: "15/7",
-    to: "20/7",
-    monthValue: 6,
-    title: "Consectetur adipisicing",
-    description:
-      "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/img/kalendar/event-example.png",
-  },
-  {
-    from: "3/8",
-    to: "5/8",
-    monthValue: 7,
-    title: "Ut enim ad minim",
-    description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "/img/kalendar/event-example.png",
-  },
-  {
-    from: "12/9",
-    to: "15/9",
-    monthValue: 8,
-    title: "Duis aute irure",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    image: "/img/kalendar/event-example.png",
-  },
-  {
-    from: "2/10",
-    to: "4/10",
-    monthValue: 9,
-    title: "Excepteur sint occaecat",
-    description:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    image: "/img/kalendar/event-example.png",
-  },
-  {
-    from: "17/11",
-    to: "20/11",
-    monthValue: 10,
-    title: "Sed ut perspiciatis",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-    image: "/img/kalendar/event-example.png",
-  },
-  {
-    from: "8/12",
-    to: "10/12",
-    monthValue: 11,
-    title: "Nemo enim ipsam",
-    description:
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
-    image: "/img/kalendar/event-example.png",
-  },
-  {
-    from: "1/1",
-    to: "5/1",
-    monthValue: 0,
-    title: "Quis nostrud exercitation",
-    description:
-      "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "/img/kalendar/event-example.png",
-  },
-  {
-    from: "12/2",
-    to: "15/2",
-    monthValue: 1,
-    title: "Reprehenderit in voluptate",
-    description:
-      "Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    image: "/img/kalendar/event-example.png",
-  },
-  {
-    from: "21/3",
-    to: "24/3",
-    monthValue: 2,
-    title: "Sint occaecat cupidatat",
-    description:
-      "Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    image: "/img/kalendar/event-example.png",
-  },
-  {
-    from: "6/4",
-    to: "8/4",
-    monthValue: 3,
-    title: "Eiusmod tempor incididunt",
-    description: "Eiusmod tempor incididunt ut labore et dolore magna",
-    image: "/img/kalendar/event-example.png",
-  },
-];
+// const events = [
+//   {
+//     from: "15/7",
+//     to: "20/7",
+//     monthValue: 6,
+//     title: "Consectetur adipisicing",
+//     description:
+//       "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+//     image: "/img/kalendar/event-example.png",
+//   },
+//   {
+//     from: "3/8",
+//     to: "5/8",
+//     monthValue: 7,
+//     title: "Ut enim ad minim",
+//     description:
+//       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+//     image: "/img/kalendar/event-example.png",
+//   },
+//   {
+//     from: "12/9",
+//     to: "15/9",
+//     monthValue: 8,
+//     title: "Duis aute irure",
+//     description:
+//       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+//     image: "/img/kalendar/event-example.png",
+//   },
+//   {
+//     from: "2/10",
+//     to: "4/10",
+//     monthValue: 9,
+//     title: "Excepteur sint occaecat",
+//     description:
+//       "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+//     image: "/img/kalendar/event-example.png",
+//   },
+//   {
+//     from: "17/11",
+//     to: "20/11",
+//     monthValue: 10,
+//     title: "Sed ut perspiciatis",
+//     description:
+//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+//     image: "/img/kalendar/event-example.png",
+//   },
+//   {
+//     from: "8/12",
+//     to: "10/12",
+//     monthValue: 11,
+//     title: "Nemo enim ipsam",
+//     description:
+//       "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+//     image: "/img/kalendar/event-example.png",
+//   },
+//   {
+//     from: "1/1",
+//     to: "5/1",
+//     monthValue: 0,
+//     title: "Quis nostrud exercitation",
+//     description:
+//       "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+//     image: "/img/kalendar/event-example.png",
+//   },
+//   {
+//     from: "12/2",
+//     to: "15/2",
+//     monthValue: 1,
+//     title: "Reprehenderit in voluptate",
+//     description:
+//       "Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+//     image: "/img/kalendar/event-example.png",
+//   },
+//   {
+//     from: "21/3",
+//     to: "24/3",
+//     monthValue: 2,
+//     title: "Sint occaecat cupidatat",
+//     description:
+//       "Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+//     image: "/img/kalendar/event-example.png",
+//   },
+//   {
+//     from: "6/4",
+//     to: "8/4",
+//     monthValue: 3,
+//     title: "Eiusmod tempor incididunt",
+//     description: "Eiusmod tempor incididunt ut labore et dolore magna",
+//     image: "/img/kalendar/event-example.png",
+//   },
+// ];
 
-type EventType = (typeof events)[0];
+// type EventType = (typeof events)[0];
 
 type EventProps = {
   event: EventType;
@@ -121,20 +123,20 @@ function Event({ event }: EventProps) {
   return (
     <div className="flex w-full">
       <div className="flex w-4/12 flex-col items-center justify-center gap-1 rounded-bl-lg rounded-tl-lg border border-transparent bg-secondary p-2 lg:w-3/12">
-        <p>from: {event.from}</p>
-        <p>to: {event.to}</p>
+        <p>from: {event.start_date}</p>
+        <p>to: </p>
       </div>
 
       <div className="flex w-8/12 items-center justify-between gap-4 rounded-br-2xl rounded-tr-2xl border border-transparent bg-base-100 pl-4 text-base-content lg:w-9/12">
         <div>
           <p className="font-bold">{event.title}</p>
 
-          <p>{event.description}</p>
+          <p>{event.desc}</p>
         </div>
 
         <Image
           className="hidden lg:block"
-          src={event.image}
+          src="/img/kalendar/event-example.png"
           width={120}
           height={120}
           alt={""}
@@ -145,6 +147,8 @@ function Event({ event }: EventProps) {
 }
 
 export default function Kalendar() {
+  const { data } = useGetEvents();
+
   const router = useRouter();
 
   const [selectedMonth, setSelectedMonth] = useState(0);
@@ -161,9 +165,11 @@ export default function Kalendar() {
     });
   }
 
-  const eventsPerMonth = events.filter(
-    (event) => event.monthValue === selectedMonth
-  );
+  const eventsPerMonth =
+    data &&
+    data.events.filter(
+      (event) => new Date(event.start_date).getMonth() === selectedMonth
+    );
 
   function incrementMonth() {
     setSelectedMonth(selectedMonth + 1);
@@ -273,15 +279,15 @@ export default function Kalendar() {
             </Button>
           </div>
 
-          {eventsPerMonth.length > 0 && (
+          {eventsPerMonth && eventsPerMonth.length > 0 && (
             <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
               {eventsPerMonth.map((event) => (
-                <Event event={event} key={event.title} />
+                <Event event={event} key={event.id} />
               ))}
             </div>
           )}
 
-          {eventsPerMonth.length === 0 && (
+          {eventsPerMonth && eventsPerMonth.length === 0 && (
             <div className="text-center text-lg">
               Нема настани за месец {currentMonth.monthName}
             </div>
