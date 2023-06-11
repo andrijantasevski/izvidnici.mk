@@ -4,7 +4,7 @@ import Image from "next/image";
 const Zanas = () => {
   return (
     <>
-      <div className="bg-about-hero bg-contain bg-no-repeat text-center text-white">
+      <div className="bg-about-hero bg-cover bg-no-repeat text-center text-white">
         <div className="flex h-96 flex-col items-center justify-center">
           <h1 className="pb-3 text-3xl font-semibold ">ЗА НАС</h1>
         </div>
@@ -50,7 +50,7 @@ const Zanas = () => {
         </p>
       </div>
 
-      <div className="flex items-center justify-center bg-primary text-white">
+      <div className="flex items-center justify-center bg-primary text-white px-20">
         <div>
           <p>1921</p>
           <p className="mx-20 my-5 w-3/5 rounded-2xl bg-gray-400 p-10 text-black">
@@ -120,12 +120,12 @@ const Zanas = () => {
             necessitatibus! Placeat deleniti quis quidem, quam ea dignissimos.
           </p>
         </div>
-        <div>
+        <div className=" ">
           <div className=" ">
             <Image
               src={"/img/za-nas/Image (26) 1.png"}
               alt="img"
-              width={4000}
+              width={2557}
               height={436}
             />
           </div>
