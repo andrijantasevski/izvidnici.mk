@@ -281,12 +281,10 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
         </Button>
       </section>
 
-      <section className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-20 py-20">
+      <section className="mx-auto w-11/12 max-w-screen-xl flex-col gap-20 py-20 md:flex">
         <h2 className="text-center text-3xl font-semibold">НАСТАНИ</h2>
 
         <div className="hidden w-full gap-4 lg:flex">
-          {/* TODO */}
-          {/* CREATE SECTION FOR MOBILE */}
           <div className="relative self-stretch bg-opacity-10">
             <Image
               src={"/img/razvigorci/nastan-1.png"}
@@ -335,7 +333,7 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
               </div>
             </div>
 
-            <div className="relative ml-2 bg-opacity-10">
+            <div className="relative w-full bg-opacity-10">
               <Image
                 src={"/img/razvigorci/nastan-3.png"}
                 alt="img"

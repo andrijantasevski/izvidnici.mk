@@ -71,7 +71,7 @@ const Card: React.FC<CardProps> = ({ cardData }) => {
   return (
     <>
       <div
-        className="mx-4 my-4 flex w-full flex-col items-center justify-start md:w-80"
+        className="max-w mx-4 my-4 flex w-full max-w-screen-xl  flex-col items-center justify-start md:w-80  "
         onClick={handleCardClick}
       >
         <motion.div
