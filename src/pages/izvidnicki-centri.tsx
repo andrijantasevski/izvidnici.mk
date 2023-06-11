@@ -33,8 +33,8 @@ const IzvidnickiCentri = () => {
           height={700}
         />
       </div>
-      <div className="flex justify-center mb-5">
-      <Image
+      <div className="mb-5 flex justify-center">
+        <Image
           src={"/img/izvidnicki-centri/Group 352 (1).png"}
           alt="img"
           width={200}
@@ -42,7 +42,378 @@ const IzvidnickiCentri = () => {
         />
       </div>
 
-      <h2>Полноправни членки</h2>
+      <h2 className="mx-44 mb-10 mt-20 font-semibold text-5xl">Полноправни членки</h2>
+
+      <div className="mx-44">
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Браќа Миладиновци“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Скопје</p>
+              <p>Телефон: +389 71 388 580</p>
+              <p>E-mail: iobmskopje@gmail.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 160.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <h2 className="mx-44 mb-10 mt-20 font-semibold text-5xl">Придружни членки</h2>
+
+
+      <div className="mx-44 mb-32">
+      <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Авантуристи“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Кавадарци</p>
+              <p>Телефон: +389 72 251 453</p>
+              <p>E-mail: ioavanturisti@yahoo.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 178.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Авантуристи“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Кавадарци</p>
+              <p>Телефон: +389 72 251 453</p>
+              <p>E-mail: ioavanturisti@yahoo.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 178.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Авантуристи“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Кавадарци</p>
+              <p>Телефон: +389 72 251 453</p>
+              <p>E-mail: ioavanturisti@yahoo.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 178.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between rounded-l-xl border-2 border-red-800 mt-10">
+          <div className="w-3/4 rounded-l-xl bg-primary text-white">
+            <p className="pl-16 pt-8">И.О. „Авантуристи“</p>
+            <div className="pl-10 pt-8">
+              <p>Град: Кавадарци</p>
+              <p>Телефон: +389 72 251 453</p>
+              <p>E-mail: ioavanturisti@yahoo.com</p>
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/img/izvidnicki-centri/image 178.png"}
+              alt="img"
+              width={240}
+              height={267}
+            />
+          </div>
+        </div>
+      </div>
     </>
   );
 };
