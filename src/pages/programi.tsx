@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
+import Head from "next/head";
 
 const Programi = () => {
   const [currentCard, setCurrentCard] = useState(0);
@@ -55,6 +56,9 @@ const Programi = () => {
 
   return (
     <>
+      <Head>
+        <title>Програми</title>
+      </Head>
       <section className="relative">
         <Image
           src="/img/background-images/programi-hero.png"

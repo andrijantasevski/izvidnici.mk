@@ -153,6 +153,9 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
         </div>
       </section>
 
+      {"/img/razvigorci/nastan-1.png"}
+      {"/img/razvigorci/nastan-2.png"}
+      {"/img/razvigorci/nastan-3.png"}
       <section className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-10 py-20">
         <h2 className="text-center text-3xl font-semibold">СВЕДОШТВА</h2>
 
@@ -282,15 +285,17 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
       </section>
 
       <section className="mx-auto w-11/12 max-w-screen-xl flex-col gap-20 py-20 md:flex">
-        <h2 className="text-center text-3xl font-semibold">НАСТАНИ</h2>
+        <div className=" text-center">
+          <h2 className="font text-xl font-semibold md:text-5xl">НАСТАНИ</h2>
+        </div>
 
-        <div className="hidden w-full gap-4 lg:flex">
-          <div className="relative self-stretch bg-opacity-10">
+        <div className=" w-full gap-4 lg:flex">
+          <div className="relative mb-5 self-stretch bg-opacity-10 md:mb-0">
             <Image
               src={"/img/razvigorci/nastan-1.png"}
               alt="img"
-              width={400}
-              height={800}
+              width={848}
+              height={888}
               className="h-full w-full rounded-xl object-cover brightness-75"
             />
 
@@ -311,13 +316,13 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-5">
             <div className="relative w-full bg-opacity-10">
               <Image
                 src={"/img/razvigorci/nastan-2.png"}
                 alt="img"
-                width={400}
-                height={400}
+                width={848}
+                height={432}
                 className="w-full brightness-75"
               />
 
@@ -328,7 +333,7 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
                   uppercase
                   asChild
                 >
-                  <Link href={`/nastani/${eventTwo.id}`}>следен настан</Link>
+                  <Link href={`/nastani/${eventTwo.id}`}>настан</Link>
                 </Button>
               </div>
             </div>
@@ -337,8 +342,8 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
               <Image
                 src={"/img/razvigorci/nastan-3.png"}
                 alt="img"
-                width={400}
-                height={400}
+                width={848}
+                height={432}
                 className="w-full brightness-75"
               />
 
@@ -349,7 +354,7 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
                   uppercase
                   asChild
                 >
-                  <Link href={`/nastani/${eventThree.id}`}>следен настан</Link>
+                  <Link href={`/nastani/${eventThree.id}`}>настан</Link>
                 </Button>
               </div>
             </div>
