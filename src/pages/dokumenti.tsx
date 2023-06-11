@@ -239,7 +239,7 @@ export default function Dokumenti() {
           <div className="flex flex-col gap-6">
             {transformedDocuments &&
               transformedDocuments.map((category) => (
-                <div className="flex flex-col gap-4">
+                <div key={category.category} className="flex flex-col gap-4">
                   <div className="flex items-center gap-4">
                     <span className="text-lg uppercase">
                       {category.category}
