@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function SectionBetween() {
   return (
-    <section className="flex justify-between pt-10">
+    <section className="flex justify-center pt-10 lg:justify-between">
       <Image
         className="hidden lg:block"
         src="/img/zacleni-se/pattern-white-section-left.svg"

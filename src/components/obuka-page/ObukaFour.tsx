@@ -53,18 +53,30 @@ const ObukaFour: React.FC = () => (
 
     {data.map((item) => (
       <div key={item.whatisLearn} className="py-10">
-        <div className=" relative mx-auto w-10/12 rounded-3xl border border-base-100 px-7 py-10 text-white ">
-          <h2 className="mb-4 text-xl font-semibold">{item.whatisLearn}</h2>
-          <p>{item.learnText}</p>
-          <div className="absolute left-3 top-[93px] hidden h-2 w-2 rounded-full bg-white md:block"></div>
+        <div className=" relative mx-auto w-10/12 max-w-screen-xl rounded-3xl border border-base-100 px-7 py-10 text-white ">
+          <div className="ml-7">
+            <h2 className="mb-4 text-xl font-semibold">{item.whatisLearn}</h2>
+          </div>
+          <div className="flex gap-5">
+            <div className=" mt-2 h-2 w-2 rounded-full bg-white md:block"></div>
+            <div className=" w-11/12">
+              <p>{item.learnText}</p>
+            </div>
+          </div>
         </div>
-        <div className="mx-auto grid w-10/12 gap-10 py-10 md:grid-cols-3 md:gap-40">
+        <div className="mx-auto grid w-10/12 max-w-screen-xl gap-10 py-10 md:grid-cols-3 md:gap-40">
           <div className="relative z-40 mx-auto flex w-11/12 flex-col justify-center space-y-10 rounded-3xl border border-base-100 px-7 py-4 text-white ">
-            <h2 className="mb-7 whitespace-nowrap text-xl font-semibold ">
-              {item.ForHoItis}
-            </h2>
-            <p>{item.forHoText}</p>
-            <div className="absolute left-3 top-[142px] hidden h-2 w-2 rounded-full bg-white md:block"></div>
+            <div className="ml-4">
+              <h2 className="mb-4 whitespace-nowrap text-xl font-semibold">
+                {item.ForHoItis}
+              </h2>
+            </div>
+            <div className="flex gap-5">
+              <div className=" mt-2 h-2 w-2 rounded-full bg-white md:block"></div>
+              <div className=" w-11/12">
+                <p>{item.forHoText}</p>
+              </div>
+            </div>
           </div>
           <div className="z-40 flex flex-col items-center justify-between  rounded-3xl px-4 py-4 text-white">
             <Image src={item.Svg} alt="SVG Icon" width={348} height={320} />
@@ -76,9 +88,15 @@ const ObukaFour: React.FC = () => (
             </p>
           </div>
           <div className=" relative mx-auto flex w-11/12 flex-col justify-center space-y-10 rounded-3xl border border-base-100 px-7 py-4 text-white">
-            <h2 className="mb-4  text-xl font-semibold">{item.HowisWon}</h2>
-            <p>{item.HowisWonText}</p>
-            <div className="absolute left-3 top-[138px] hidden h-2 w-2 rounded-full bg-white md:block"></div>
+            <div className="ml-7">
+              <h2 className="mb-4 text-xl font-semibold">{item.HowisWon}</h2>
+            </div>
+            <div className="flex gap-5">
+              <div className=" mt-2 h-2 w-2 rounded-full bg-white md:block"></div>
+              <div className=" w-11/12">
+                <p>{item.HowisWonText}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

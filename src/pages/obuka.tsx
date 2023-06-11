@@ -13,7 +13,7 @@ export default function obuka() {
         <title>Obuka</title>
       </Head>
       <main>
-        <section className="relative w-full ">
+        <section className="relative w-full   ">
           <div className="relative">
             <Image
               src="/img/obuka-page/obuka.png"
@@ -32,8 +32,8 @@ export default function obuka() {
             </h1>
           </div>
         </section>
-        <section className="relative my-10 flex h-[365px] items-center justify-center md:my-0 ">
-          <div className="mx-auto w-11/12 text-center text-lg md:w-7/12">
+        <section className="relative my-10 flex h-[365px] w-full  items-center justify-center md:my-0 ">
+          <div className="mx-auto w-11/12 max-w-screen-xl text-center text-lg md:w-7/12">
             Покрај областите на личен развој предвидени за категориите
             развигорци и извидници, за нашите истражувачи, ровери и сениори има
             креирано пргресивна тренинг рамка која одговара на потребите и
@@ -53,6 +53,7 @@ export default function obuka() {
             />
           </div>
         </section>
+
         <ObukaComponent />
         <SectionBetween />
         <ObukaSecond />
@@ -64,7 +65,7 @@ export default function obuka() {
           <h4 className=" py-14 text-center text-xl font-bold md:text-2xl">
             Работен век на еден извидник
           </h4>
-          <div className=" mx-auto w-10/12">
+          <div className=" mx-auto w-10/12 max-w-screen-xl">
             <Image
               src="./img/obuka-page/obuka-last.svg"
               width={1720}

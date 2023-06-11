@@ -45,7 +45,10 @@ const Puzzle: React.FC = () => {
   }, [inView, containerControls]);
 
   return (
-    <div ref={sectionRef} className="flex items-center justify-center  py-12">
+    <div
+      ref={sectionRef}
+      className="mx-auto flex max-w-screen-xl items-center justify-center  py-12"
+    >
       <motion.div
         className="mx-auto flex flex-col"
         initial="hidden"

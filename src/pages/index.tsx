@@ -6,8 +6,28 @@ import CardGrid from "@/components/landing-page/CardAnimation";
 import PuzzleAnimation from "@/components/landing-page/PuzzleAnimation";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { format } from "date-fns";
+import { env } from "@/env.mjs";
+import { GetStaticProps } from "next";
 
-export default function Home() {
+type EventType = {
+  id: number;
+  picture: string;
+  title: string;
+  place: string;
+  desc: string;
+  start_date: string;
+  end_date: string;
+  created_at: string | null;
+  updated_at: string | null;
+};
+
+type RazvigorciPageProps = {
+  events: EventType[];
+};
+
+export default function Home({ events }: RazvigorciPageProps) {
+  const [eventOne, eventTwo, eventThree] = events;
   const ref = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
@@ -89,7 +109,7 @@ export default function Home() {
         </div>
 
         <div className="pb-10">
-          <div className="mx-auto mt-10 grid w-11/12 grid-cols-1 gap-6 sm:grid-cols-2 md:w-10/12 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          <div className="mx-auto mt-10 grid w-11/12 max-w-screen-xl grid-cols-1 gap-6 sm:grid-cols-2 md:w-10/12 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <div className="relative">
               <div className="mb-5">
                 <Image
@@ -199,7 +219,7 @@ export default function Home() {
             className="w-full object-cover"
           />
 
-          <div className="absolute left-1/2 top-16 w-full -translate-x-1/2 -translate-y-1/2 transform text-center text-white md:top-[40%] lg:w-1/2">
+          <div className="absolute left-1/2 top-16 mx-auto w-full max-w-screen-xl -translate-x-1/2 -translate-y-1/2 transform text-center text-white md:top-[40%] lg:w-1/2">
             <h5 className="mx-auto w-11/12  text-xs leading-5 md:w-8/12 md:text-lg">
               „ Давам чесен збор,
               <br />  дека ќе ја запознаам и сакам својата татковина,  дека ќе
@@ -209,7 +229,7 @@ export default function Home() {
             </h5>
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0  mt-5 text-center text-white">
+          <div className="absolute bottom-0 left-0 right-0  mt-5 text-center text-white ">
             <p className="text-xl font-semibold md:text-5xl ">
               НОВА АВАНТУРА ТЕ ЧЕКА!
             </p>
@@ -223,14 +243,14 @@ export default function Home() {
               <motion.img
                 src="/img/cards/svg/icon-lending.svg"
                 alt="icon"
-                className=" mx-auto w-3/6"
+                className=" mx-auto w-3/6 md:w-full"
               />
             </motion.div>
           </div>
         </section>
 
         <div className=" bg-black text-center">
-          <div className=" mx-auto w-11/12 md:w-7/12">
+          <div className="  mx-auto w-11/12 max-w-screen-xl md:w-7/12">
             <p className="text-sm leading-10 text-primary-content">
               Независно од полот, возраста, позадината или определбата секој
               заинтересиран може да се вклучи и придонесе во најголемото
@@ -239,7 +259,7 @@ export default function Home() {
             </p>
           </div>
           <div className="bg-gradient-to-r from-black to-[#1C362D]">
-            <div className="mx-auto mt-10 grid w-11/12 grid-cols-1 gap-6 py-10 sm:grid-cols-2 md:w-10/12 md:grid-cols-3 lg:grid-cols-4 ">
+            <div className="mx-auto  mt-10 grid w-11/12 max-w-screen-xl grid-cols-1 gap-6 py-10 sm:grid-cols-2 md:w-10/12 md:grid-cols-3 lg:grid-cols-4 ">
               <div className="relative">
                 <div className="mb-10">
                   <Image
@@ -306,63 +326,92 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className=" text-center">
-              <h2 className="font text-xl font-semibold text-primary-content md:text-5xl">
-                НАСТАНИ
-              </h2>
-              <div className=" mx-auto w-11/12 py-10 md:w-7/12">
-                <p className=" text-center text-lg leading-10 text-primary-content">
-                  СИМ, како и повеќе од 17 извиднички одреди ширум Македонија на
-                  годишно ниво организираат еднодневни и повеќедневни
-                  активности, хајкови, тренинзи, обуки, работилници и кампување.
-                  Придружи ни се!
-                </p>
+
+            <section className="mx-auto w-11/12 max-w-screen-xl flex-col gap-20 py-20 md:flex">
+              <div className=" text-center">
+                <h2 className="font text-xl font-semibold text-primary-content md:text-5xl">
+                  НАСТАНИ
+                </h2>
+                <div className="  mx-auto w-11/12 max-w-screen-xl py-10 md:w-7/12">
+                  <p className=" text-center text-lg leading-10 text-primary-content">
+                    СИМ, како и повеќе од 17 извиднички одреди ширум Македонија
+                    на годишно ниво организираат еднодневни и повеќедневни
+                    активности, хајкови, тренинзи, обуки, работилници и
+                    кампување. Придружи ни се!
+                  </p>
+                </div>
               </div>
-            </div>
-            <section className="mx-auto w-11/12 py-10 md:w-10/12">
-              <div className="container mx-auto flex flex-wrap ">
-                <div className="w-full md:w-1/2">
-                  <div className="relative mr-5">
-                    <Image
-                      className="w-full rounded-lg object-cover shadow-lg"
-                      src="/img/landing-page/img-left-lending.png"
-                      alt="Picture 1"
-                      width={848}
-                      height={888}
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 px-4 py-2 text-center text-white">
-                      <h4 className="text-lg">СЛЕДЕН НАСТАН</h4>
-                      <p>02,03,2023 | Велес</p>
+
+              <div className=" w-full gap-4 lg:flex">
+                <div className="relative mb-5 self-stretch bg-opacity-10 md:mb-0">
+                  <Image
+                    src="/img/landing-page/img-left-lending.png"
+                    alt="img"
+                    width={848}
+                    height={888}
+                    className="h-full w-full rounded-xl object-cover brightness-75"
+                  />
+
+                  <div className="absolute inset-x-0 bottom-4 flex flex-col gap-2 text-center text-white">
+                    <div>
+                      <Button
+                        variant={"secondary-underlined"}
+                        rounding="none"
+                        uppercase
+                        asChild
+                      >
+                        <Link href={`/nastani/${eventOne.id}`}>
+                          следен настан
+                        </Link>
+                      </Button>
                     </div>
+                    <p>
+                      {format(new Date(eventOne.start_date), "P")} |{" "}
+                      {eventOne.place}
+                    </p>
                   </div>
                 </div>
-                <div className="flex w-full flex-col md:w-1/2">
-                  <div className="mb-5">
-                    <div className="relative">
-                      <Image
-                        className="w-full rounded-lg object-cover shadow-lg"
-                        src="/img/landing-page/img-lending-top.png"
-                        alt="Picture 1"
-                        width={848}
-                        height={432}
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 px-4 py-2 text-center text-white">
-                        <p className="text-lg">НАСТАН</p>
-                      </div>
+
+                <div className="flex flex-col gap-5">
+                  <div className="relative w-full bg-opacity-10">
+                    <Image
+                      src="/img/landing-page/img-lending-top.png"
+                      alt="img"
+                      width={848}
+                      height={432}
+                      className="w-full brightness-75"
+                    />
+
+                    <div className="absolute inset-x-0 bottom-4 text-center">
+                      <Button
+                        variant={"secondary-underlined"}
+                        rounding="none"
+                        uppercase
+                        asChild
+                      >
+                        <Link href={`/nastani/${eventTwo.id}`}>настан</Link>
+                      </Button>
                     </div>
                   </div>
-                  <div>
-                    <div className="relative">
-                      <Image
-                        className="w-full rounded-lg object-cover shadow-lg"
-                        src="/img/landing-page/img-lending-botom.png"
-                        alt="Picture 1"
-                        width={848}
-                        height={432}
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 px-4 py-2 text-center text-white">
-                        <p className="text-lg">НАСТАНИ</p>
-                      </div>
+
+                  <div className="relative w-full bg-opacity-10">
+                    <Image
+                      src="/img/landing-page/img-lending-botom.png"
+                      alt="img"
+                      width={848}
+                      height={432}
+                      className="w-full brightness-75"
+                    />
+
+                    <div className="absolute inset-x-0 bottom-4 text-center text-white">
+                      <Button
+                        variant={"secondary-underlined"}
+                        rounding="none"
+                        uppercase
+                        asChild
+                      >
+                        <Link href={`/nastani/${eventThree.id}`}>настан</Link>
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -374,3 +423,15 @@ export default function Home() {
     </main>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const response = await fetch(
+    `${env.API_BASE_URL}/api/events?upcoming&limit=3`
+  );
+
+  const upcomingEvents = await response.json();
+
+  return {
+    props: { events: upcomingEvents.events },
+  };
+};
