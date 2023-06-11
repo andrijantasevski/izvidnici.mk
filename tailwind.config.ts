@@ -69,7 +69,10 @@ module.exports = {
         "group-left": "url('/img/razvigorci/Group-left.png')",
         "group-right": "url('/img/razvigorci/Group-right.png')",
         "programi-hero": "url('/img/background-images/programi-hero.png')",
-        "programi-up-right": "url('/img/background-images/Group 282.png')"
+        "programi-up-right": "url('/img/background-images/Group 282.png')",
+        "izvidnicki-centri-hero": "url('/img/background-images/izvidnicki-centri-hero.png')",
+        "izvidnicki-centri-map-left": "url('/img/background-images/Group 435 (1).png')",
+        "izvidnicki-centri-map-right": "url('/img/background-images/Group 435.png')"
         
       },
       height: {
