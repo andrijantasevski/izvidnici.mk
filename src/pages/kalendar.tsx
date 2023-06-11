@@ -6,6 +6,7 @@ import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import useGetEvents, { EventType } from "@/utils/useGetEvents";
 import { format } from "date-fns";
 import Link from "next/link";
+import { env } from "@/env.mjs";
 
 const months = [
   { monthValue: 0, monthName: "Јануари" },
@@ -135,13 +136,17 @@ function Event({ event }: EventProps) {
           <p>{event.desc}</p>
         </div>
 
-        <Image
-          className="hidden h-full lg:block"
-          src="/img/kalendar/event-example.png"
-          width={120}
-          height={120}
-          alt={""}
-        />
+        <div className="h-32 w-32">
+          <Image
+            className="hidden h-full rounded-full lg:block"
+            src={`${env.NEXT_PUBLIC_API_BASE_URL}/${event.picture}`}
+            width={120}
+            height={120}
+            alt={event.title}
+            priority
+          />
+          .
+        </div>
       </div>
     </Link>
   );
