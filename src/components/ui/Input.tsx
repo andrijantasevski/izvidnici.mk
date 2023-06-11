@@ -20,8 +20,7 @@ const inputVariants = cva(
         primary: [
           "text-base-100",
           "border-base-100",
-          "focus:ring-primary-focus",
-          "focus:border-primary-focus",
+          "focus:ring-primary-content",
           "placeholder:text-base-300",
         ],
         error: [
@@ -44,7 +43,7 @@ interface Props
     VariantProps<typeof inputVariants> {
   id: string;
   errorMessage: string;
-  placeholder: string;
+  placeholder?: string;
   /**
    * Icon to show before the placeholder/input text.
    */

@@ -65,7 +65,22 @@ module.exports = {
         "landing-first-section":
           "url('/img/background-images/background-landing-page-first-section.jpg')",
         footer: "url('/img/background-images/background-footer.svg')",
+        "razvigorci-hero": "url('/img/background-images/background-razvigorci-hero.png')",
+        "group-left": "url('/img/razvigorci/Group-left.png')",
+        "group-right": "url('/img/razvigorci/Group-right.png')",
+        "programi-hero": "url('/img/background-images/programi-hero.png')",
+        "programi-up-right": "url('/img/background-images/Group 282.png')",
+        "izvidnicki-centri-hero": "url('/img/background-images/izvidnicki-centri-hero.png')",
+        "izvidnicki-centri-map-left": "url('/img/background-images/Group 435 (1).png')",
+        "izvidnicki-centri-map-right": "url('/img/background-images/Group 435.png')",
+        "about-hero": "url('/img/background-images/about-hero.png')",
+
+        
       },
+      height: {
+        '120': '120px'
+      }, 
+
     },
   },
   plugins: [],

@@ -33,7 +33,7 @@ const headerLinks = [
   },
   {
     title: "контакт",
-    href: "/contact",
+    href: "/kontakt",
   },
 ];
 
@@ -137,6 +137,8 @@ const ModalNavigationMenu = ({
 };
 
 const Header = () => {
+  const router = useRouter();
+
   const [isSlideInMenuOpen, setIsSlideInMenuOpen] = useState(false);
 
   const openSlideInMenu = () => setIsSlideInMenuOpen(true);
@@ -148,22 +150,42 @@ const Header = () => {
         <nav className="mx-auto flex w-11/12 max-w-screen-xl items-center justify-between">
           <Link href="/" className="flex flex-col items-center">
             <Image
-              src="/logo.png"
+              src={
+                router.pathname === "/donacija"
+                  ? "/img/logos/logo-dark.svg"
+                  : "/img/logos/logo-white.svg"
+              }
               alt="logo"
               width={50}
               height={50}
               className="text-white"
               priority
             />
-            <span className="font-bold text-base-100">Извидници</span>
+            <span
+              className={`font-bold lg:hidden ${
+                router.pathname === "/donacija"
+                  ? "text-content"
+                  : "text-base-100"
+              }`}
+            >
+              Извидници
+            </span>
           </Link>
 
-          <div className="hidden items-center justify-between gap-7 text-base-100 lg:flex">
+          <div
+            className={`hidden items-center justify-between gap-7 lg:flex ${
+              router.pathname === "/donacija" ? "text-content" : "text-base-100"
+            }`}
+          >
             {headerLinks.map((headerLink) => (
               <Link
                 key={headerLink.href}
                 href={headerLink.href}
-                className="font-semibold uppercase hover:text-base-200"
+                className={`font-semibold uppercase ${
+                  router.pathname === "/donacija"
+                    ? "hover:text-neutral-600"
+                    : "hover:text-base-200"
+                }`}
               >
                 {headerLink.title}
               </Link>
