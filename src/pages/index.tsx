@@ -54,40 +54,41 @@ export default function Home() {
             <div className="flex items-center justify-center">
               <button
                 onClick={handleClick}
-                className="flex flex-col items-center justify-center gap-2 text-base-100 hover:text-base-200">
-                <IconArrowNarrowDown className="h-7 w-7"/>
+                className="flex flex-col items-center justify-center gap-2 text-base-100 hover:text-base-200"
+              >
+                <IconArrowNarrowDown className="h-7 w-7" />
                 <span>Scroll down</span>
               </button>
             </div>
           </div>
         </div>
       </section>
-      <div
+
+      <section
         ref={ref}
         className="bg-gradient-to-r from-[#24463B] to-[#1C362D] py-10"
       >
         <CardGrid />
-        <div>
-          <PuzzleAnimation />
-        </div>
-        <div className=" text-center">
+
+        <PuzzleAnimation />
+
+        <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-6 text-center">
           <h2 className="font text-xl font-semibold text-primary-content md:text-5xl">
             ЗАЧЛЕНИ СЕ!
           </h2>
-          <div className=" mx-auto w-11/12 py-10 md:w-9/12">
-            <p className=" text-center text-lg leading-10 text-primary-content">
-              Со повеќе од 57 милиони активни членови во 173 земји и територии,
-              извидништвото е едно од најголемите младински движења во светот!
-              Од стреличарење и планинарење до јавно говорење и обуки за
-              лидерство, извидниците учат преку работа и развиваат вештини кои
-              ќе им помогнат да напредуваат и да станат агенти на позитивни
-              промени во нашиот свет.  Контактирајте го вашиот локален
-              извиднички одред за да дознаете како да го започнете вашето
-              извидничко патешествие.
-            </p>
-          </div>
+
+          <p className=" text-center text-lg leading-10 text-primary-content">
+            Со повеќе од 57 милиони активни членови во 173 земји и територии,
+            извидништвото е едно од најголемите младински движења во светот! Од
+            стреличарење и планинарење до јавно говорење и обуки за лидерство,
+            извидниците учат преку работа и развиваат вештини кои ќе им помогнат
+            да напредуваат и да станат агенти на позитивни промени во нашиот
+            свет.  Контактирајте го вашиот локален извиднички одред за да
+            дознаете како да го започнете вашето извидничко патешествие.
+          </p>
         </div>
-        <div className=" pb-10">
+
+        <div className="pb-10">
           <div className="mx-auto mt-10 grid w-11/12 grid-cols-1 gap-6 sm:grid-cols-2 md:w-10/12 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <div className="relative">
               <div className="mb-5">
@@ -188,13 +189,14 @@ export default function Home() {
             </div>
           </div>
         </div>
+
         <section className="relative w-full">
           <Image
             src="/img/cards/svg/lending-big.svg"
             alt="Big Image"
             width={2307}
             height={1700}
-            className="object-cover"
+            className="w-full object-cover"
           />
 
           <div className="absolute left-1/2 top-16 w-full -translate-x-1/2 -translate-y-1/2 transform text-center text-white md:top-[40%] lg:w-1/2">
@@ -206,6 +208,7 @@ export default function Home() {
               работам по извидничките закони.“
             </h5>
           </div>
+
           <div className="absolute bottom-0 left-0 right-0  mt-5 text-center text-white">
             <p className="text-xl font-semibold md:text-5xl ">
               НОВА АВАНТУРА ТЕ ЧЕКА!
@@ -225,6 +228,7 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+
         <div className=" bg-black text-center">
           <div className=" mx-auto w-11/12 md:w-7/12">
             <p className="text-sm leading-10 text-primary-content">
@@ -366,7 +370,7 @@ export default function Home() {
             </section>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

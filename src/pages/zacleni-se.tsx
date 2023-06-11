@@ -196,11 +196,11 @@ export default function ZacleniSe() {
             width={1920}
             height={536}
             alt="Два извидника покажуваат знак со нивните раце."
-            className="w-full brightness-90"
+            className="h-[50vh] w-full object-cover brightness-90 lg:h-[60vh]"
             priority
           />
 
-          <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl text-base-100 2xl:text-6xl">
+          <h1 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-5xl text-base-100 2xl:text-6xl">
             Зачлени се
           </h1>
         </section>

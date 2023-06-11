@@ -9,7 +9,6 @@ export const buttonVariants = cva(
     "focus:outline-none",
     "focus:ring-2",
     "focus:ring-offset-2",
-    "border",
     "inline-flex",
     "items-center",
     "justify-center",
@@ -21,6 +20,7 @@ export const buttonVariants = cva(
        */
       variant: {
         primary: [
+          "border",
           "bg-primary",
           "text-primary-content",
           "border-transparent",
@@ -28,6 +28,7 @@ export const buttonVariants = cva(
           "focus:ring-primary-focus",
         ],
         secondary: [
+          "border",
           "bg-secondary",
           "text-secondary-content",
           "border-transparent",
@@ -43,6 +44,7 @@ export const buttonVariants = cva(
           "border-b-2",
         ],
         white: [
+          "border",
           "bg-base-100",
           "text-base-content",
           "border-transparent",
@@ -50,6 +52,7 @@ export const buttonVariants = cva(
           "focus:ring-base-content",
         ],
         "outline-white": [
+          "border",
           "bg-transparent",
           "border-base-100",
           "text-base-100",
@@ -57,6 +60,7 @@ export const buttonVariants = cva(
           "focus:ring-base-content",
         ],
         error: [
+          "border",
           "bg-error",
           "text-error-content",
           "border-transparent",
@@ -65,6 +69,7 @@ export const buttonVariants = cva(
         ],
         loading: ["bg-primary-50", "text-white"],
         disabled: [
+          "border",
           "bg-gray-100",
           "text-gray-400",
           "cursor-auto",
