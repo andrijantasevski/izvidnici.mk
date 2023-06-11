@@ -14,7 +14,7 @@ interface Props {
 }
 const Map = ({ HandleOnCityClick }: Props) => {
   return (
-    <div className="mt-20 flex justify-center">
+    <div className="mt-20 flex w-full  justify-center bg-primary   py-20">
       <Image
         alt="mkdImage"
         src="https://reklama5.mk/Content/images/newmapmkd.png"

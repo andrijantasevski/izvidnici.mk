@@ -50,7 +50,7 @@ const ClenkiAndIzvidnici = () => {
   }, [PolnoPravniClenki, PridruzniPravniClenki]);
 
   return (
-    <div className="container mx-auto">
+    <div className=" mx-auto w-full  ">
       <Map HandleOnCityClick={HandleOnCityClick} />
       <h1 className="my-10 text-center text-xl font-bold">
         Полноправни членки
@@ -63,6 +63,7 @@ const ClenkiAndIzvidnici = () => {
             city={item.city}
             number={item.number}
             email={item.email}
+            imgUrl={item.imgUrl}
           />
         ))
       ) : (
@@ -80,6 +81,7 @@ const ClenkiAndIzvidnici = () => {
               city={item.city}
               number={item.number}
               email={item.email}
+              imgUrl={item.imgUrl}
             />
           ))
         ) : (

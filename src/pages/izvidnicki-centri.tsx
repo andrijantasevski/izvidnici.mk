@@ -5,13 +5,20 @@ import ClenkiAndIzvidnici from '@/components/ClenkiAndIzvidnici/ClenkiAndIzvidni
 const IzvidnickiCentri = () => {
   return (
     <>
-      <div className="bg-izvidnicki-centri-hero bg-contain bg-no-repeat text-center text-white ">
-        <div className="flex h-96 flex-col items-center justify-center">
-          <h1 className="pb-3 text-3xl font-semibold ">
-            ИЗВИДНИЧКИ ЦЕНТРИ И ОДРЕДИ
-          </h1>
-        </div>
-      </div>
+      <section className="relative">
+        <Image
+          src="/img/background-images/izvidnicki-centri-hero.png"
+          width={1920}
+          height={536}
+          alt="Тим од извидници."
+          className="h-[50vh] w-full object-cover brightness-90 lg:h-[60vh]"
+          priority
+        />
+
+        <h1 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-5xl text-base-100 2xl:text-6xl">
+          Извиднички центри и одреди
+        </h1>
+      </section>
       <div className="flex">
         <p className="px-24 py-10 text-center">
           Извидничкото движење во Македонија е распострането во повеќе од 17
