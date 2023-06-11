@@ -33,7 +33,7 @@ const headerLinks = [
   },
   {
     title: "контакт",
-    href: "/contact",
+    href: "/kontakt",
   },
 ];
 
