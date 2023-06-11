@@ -3,8 +3,29 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import Head from "next/head";
+import { GetStaticProps, NextPage } from "next";
+import { env } from "@/env.mjs";
+import { format } from "date-fns";
 
-const razvigorci = () => {
+type EventType = {
+  id: number;
+  picture: string;
+  title: string;
+  place: string;
+  desc: string;
+  start_date: string;
+  end_date: string;
+  created_at: string | null;
+  updated_at: string | null;
+};
+
+type RazvigorciPageProps = {
+  events: EventType[];
+};
+
+const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
+  const [eventOne, eventTwo, eventThree] = events;
+
   return (
     <>
       <Head>
@@ -28,7 +49,7 @@ const razvigorci = () => {
         </div>
       </section>
 
-      <section className="mx-auto w-11/12 max-w-screen-xl py-20">
+      <section className="mx-auto w-11/12 max-w-screen-xl py-10 lg:py-20">
         <p className="leading-loose">
           Ја запознаваат природата, учат да ја сакаат и се грижат за неа. Учат
           како да се снајдат во природата и да станат свесни за нејзините
@@ -101,8 +122,8 @@ const razvigorci = () => {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 flex w-11/12 max-w-screen-xl flex-col gap-20 lg:flex-row">
-        <div className="w-1/2">
+      <section className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-10 py-10 lg:flex-row lg:gap-20 lg:py-20">
+        <div className="w-full lg:w-1/2">
           <Image
             src={"/img/razvigorci/areas-personal-growth.png"}
             alt="img"
@@ -111,14 +132,14 @@ const razvigorci = () => {
           />
         </div>
 
-        <div className="flex w-1/2 flex-col items-center justify-center">
+        <div className="flex w-full flex-col items-center justify-center lg:w-1/2">
           <Image
             src="/img/zacleni-se/pattern-white-section-centered.svg"
             width={266}
             height={120}
             alt="Pattern"
           />
-          <div className="flex w-full flex-col items-center justify-center gap-10 rounded-3xl bg-primary p-20 text-center text-white">
+          <div className="flex w-full flex-col items-center justify-center gap-10 rounded-3xl bg-primary p-10 text-center text-white lg:p-20">
             <h2 className="text-2xl font-bold uppercase">
               области на личен развој за развигорците во извидничката програма
             </h2>
@@ -132,11 +153,11 @@ const razvigorci = () => {
         </div>
       </section>
 
-      <section className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-20 py-20">
+      <section className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-10 py-20">
         <h2 className="text-center text-3xl font-semibold">СВЕДОШТВА</h2>
 
-        <div className="flex gap-4">
-          <div className="w-1/4 rounded-3xl">
+        <div className="flex flex-col gap-6 lg:flex-row">
+          <div className="flex w-full flex-col items-center justify-center rounded-3xl lg:w-1/4">
             <Image
               src={"/img/razvigorci/8 1.png"}
               alt="img"
@@ -155,16 +176,16 @@ const razvigorci = () => {
               </p>
               <p className="pt-5">Ана, 10 години</p>
             </div>
+
             <Image
               src={"/img/razvigorci/Group 534.png"}
               alt="img"
               width={100}
               height={100}
-              className="ml-20"
             />
           </div>
 
-          <div className="w-1/4 rounded-3xl">
+          <div className="flex w-full flex-col items-center justify-center rounded-3xl lg:w-1/4">
             <Image
               src={"/img/razvigorci/8 2.png"}
               alt="img"
@@ -188,11 +209,10 @@ const razvigorci = () => {
               alt="img"
               width={100}
               height={100}
-              className="ml-20"
             />
           </div>
 
-          <div className="w-1/4 rounded-3xl">
+          <div className="flex w-full flex-col items-center justify-center rounded-3xl lg:w-1/4">
             <Image
               src={"/img/razvigorci/8 3.png"}
               alt="img"
@@ -216,11 +236,10 @@ const razvigorci = () => {
               alt="img"
               width={100}
               height={100}
-              className="ml-20"
             />
           </div>
 
-          <div className="w-1/4 rounded-3xl">
+          <div className="flex w-full flex-col items-center justify-center rounded-3xl lg:w-1/4">
             <Image
               src={"/img/razvigorci/8 4.png"}
               alt="img"
@@ -244,13 +263,12 @@ const razvigorci = () => {
               alt="img"
               width={100}
               height={100}
-              className="ml-20"
             />
           </div>
         </div>
       </section>
 
-      <section className="flex justify-center py-20">
+      <section className="flex justify-center py-10">
         <Button
           variant={"secondary-underlined"}
           rounding="none"
@@ -266,56 +284,74 @@ const razvigorci = () => {
       <section className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-20 py-20">
         <h2 className="text-center text-3xl font-semibold">НАСТАНИ</h2>
 
-        <div className="flex justify-center">
-          <div className="relative bg-opacity-10">
+        <div className="hidden w-full gap-4 lg:flex">
+          {/* TODO */}
+          {/* CREATE SECTION FOR MOBILE */}
+          <div className="relative self-stretch bg-opacity-10">
             <Image
               src={"/img/razvigorci/nastan-1.png"}
               alt="img"
               width={400}
               height={800}
+              className="h-full w-full rounded-xl object-cover brightness-75"
             />
 
-            <div className="absolute inset-0 mt-96 text-center text-white">
-              <Button
-                variant={"secondary-underlined"}
-                className=" text-center "
-              >
-                СЛЕДЕН НАСТАН
-              </Button>
-              <p>02.03.2023 | Велес</p>
+            <div className="absolute inset-x-0 bottom-4 flex flex-col gap-2 text-center text-white">
+              <div>
+                <Button
+                  variant={"secondary-underlined"}
+                  rounding="none"
+                  uppercase
+                  asChild
+                >
+                  <Link href={`/event/${eventOne.id}`}>следен настан</Link>
+                </Button>
+              </div>
+              <p>
+                {format(new Date(eventOne.start_date), "P")} | {eventOne.place}
+              </p>
             </div>
           </div>
 
-          <div>
-            <div className="relative mb-2 ml-2 bg-opacity-10">
+          <div className="flex flex-col gap-4">
+            <div className="relative w-full bg-opacity-10">
               <Image
                 src={"/img/razvigorci/nastan-2.png"}
                 alt="img"
                 width={400}
                 height={400}
+                className="w-full brightness-75"
               />
-              <div className="absolute inset-0 mt-40  text-center text-white">
+
+              <div className="absolute inset-x-0 bottom-4 text-center">
                 <Button
                   variant={"secondary-underlined"}
-                  className=" text-center "
+                  rounding="none"
+                  uppercase
+                  asChild
                 >
-                  СЛЕДЕН НАСТАН
+                  <Link href={`/event/${eventTwo.id}`}>следен настан</Link>
                 </Button>
               </div>
             </div>
+
             <div className="relative ml-2 bg-opacity-10">
               <Image
                 src={"/img/razvigorci/nastan-3.png"}
                 alt="img"
                 width={400}
                 height={400}
+                className="w-full brightness-75"
               />
-              <div className="absolute inset-0 mt-40  text-center text-white">
+
+              <div className="absolute inset-x-0 bottom-4 text-center text-white">
                 <Button
                   variant={"secondary-underlined"}
-                  className=" text-center "
+                  rounding="none"
+                  uppercase
+                  asChild
                 >
-                  СЛЕДЕН НАСТАН
+                  <Link href={`/event/${eventThree.id}`}>следен настан</Link>
                 </Button>
               </div>
             </div>
@@ -326,4 +362,16 @@ const razvigorci = () => {
   );
 };
 
-export default razvigorci;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const response = await fetch(
+    `${env.API_BASE_URL}/api/events?upcoming&limit=3`
+  );
+
+  const upcomingEvents = await response.json();
+
+  return {
+    props: { events: upcomingEvents.events },
+  };
+};
+
+export default Razvigorci;
