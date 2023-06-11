@@ -1,4 +1,8 @@
 import ObukaComponent from "@/components/obuka-page/ObukaComponent";
+import ObukaFour from "@/components/obuka-page/ObukaFour";
+import ObukaSecond from "@/components/obuka-page/ObukaSecond";
+import ObukaThree from "@/components/obuka-page/ObukaThree";
+import SectionBetween from "@/components/obuka-page/SectionBetween";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -28,7 +32,6 @@ export default function obuka() {
             </h1>
           </div>
         </section>
-
         <section className="relative my-10 flex h-[365px] items-center justify-center md:my-0 ">
           <div className="mx-auto w-11/12 text-center text-lg md:w-7/12">
             Покрај областите на личен развој предвидени за категориите
@@ -51,6 +54,26 @@ export default function obuka() {
           </div>
         </section>
         <ObukaComponent />
+        <SectionBetween />
+        <ObukaSecond />
+        <SectionBetween />
+        <ObukaThree />
+        <SectionBetween />
+        <ObukaFour />
+        <div className=" py-10">
+          <h4 className=" py-14 text-center text-xl font-bold md:text-2xl">
+            Работен век на еден извидник
+          </h4>
+          <div className=" mx-auto w-10/12">
+            <Image
+              src="./img/obuka-page/obuka-last.svg"
+              width={1720}
+              height={718}
+              className="z-0 w-full object-cover"
+              alt="image svg"
+            />
+          </div>
+        </div>
       </main>
     </>
   );

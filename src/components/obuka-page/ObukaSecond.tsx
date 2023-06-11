@@ -16,20 +16,20 @@ const data: ObukaData[] = [
   {
     whatisLearn: "ШТО СЕ ИЗУЧУВА",
     learnText:
-      "Прогресивната патека за личен развој во извидничкото движење започнува токму со оваа школа. Истата опфаќа теоретска едукација и развој на лидерски вештини кај секој учесник, основни меки вештини, имплементирање на веќе постоечки програми за деца и млади од основната програма на СИМ и вештини за промоција на извидништвото и извидничките вредности. Накратко, се имплементира курикулум создаден од комбинација на меки вештини, лидерски вештини и основни извиднички вештини.",
+      "Следната етапа во патеката за личен развој претставува Школата за водачи 2 на која предуслов за учество е поминат првиот степен на едукација - ШЗВ 1. Со оваа школа членовите на извидничката организација имаат можност за практикување на вештини за имплементирање на програми, работење врз база на менторство и добиен фидбек и развивање на нови активности врз база на поставените едукативни цели. Дополнително се работи на вештини за имплементирање на дополнителни програми како целите за оддржлив развој, Earth Tribe иницијатива, идентификување и имплементирање на локални инцијативи, извори за основно финансирање и активности за промоција на извидништвото преку отворени настани - каравани, промотивни настани, настани во училишта итн. Накратко, се имплементира курикулум создаден од комбинација на вештини за проектен менаџмент, обезбедување на ресурси на одржлив начин, вештини за пласирање на пазарот на трудот и сл.",
     ForHoItis: "ЗА КОГО Е НАМЕНЕТА",
     forHoText:
-      "Регистрирани членови во извидничката организација, на возраст над 14 години.",
-    Svg: "/img/obuka-page/poligon.svg",
-    SvgText: "ШКОЛА ЗА ВОДАЧИ 1",
+      " Регистрирани членови во извидничката организација, на возраст над 16 години, со веќе помината и освоена Школа за водачи 1.",
+    Svg: "/img/obuka-page/obuka-second.svg",
+    SvgText: "ОБУКА ЗА ЛИДЕРИ 2",
     HowisWon: "КАКО СЕ ОСВОЈУВА",
     HowisWonText:
       "Со активно учество на ШЗВ 1; Со планирање и имплементација на сесија / работилница во рамките на Летен / Зимски Камп, Ден на извидници, Извиднички караван.",
   },
 ];
 
-const ObukaComponent: React.FC = () => (
-  <div className="relative bg-[#455227]">
+const ObukaSecond: React.FC = () => (
+  <div className="relative bg-[#330428]">
     <div className="absolute bottom-0 right-0 hidden md:block">
       <Image
         src="./img/cards/svg/back-card.svg"
@@ -62,7 +62,7 @@ const ObukaComponent: React.FC = () => (
               {item.ForHoItis}
             </h2>
             <p>{item.forHoText}</p>
-            <div className="absolute left-3 top-[160px] hidden h-2 w-2 rounded-full bg-white md:block"></div>
+            <div className="absolute left-3 top-[147px] hidden h-2 w-2 rounded-full bg-white md:block"></div>
           </div>
           <div className="z-40 flex flex-col items-center justify-between  rounded-3xl px-4 py-4 text-white">
             <Image src={item.Svg} alt="SVG Icon" width={348} height={320} />
@@ -73,7 +73,7 @@ const ObukaComponent: React.FC = () => (
           <div className=" relative mx-auto flex w-11/12 flex-col justify-center space-y-10 rounded-3xl border border-base-100 px-7 py-4 text-white">
             <h2 className="mb-4  text-xl font-semibold">{item.HowisWon}</h2>
             <p>{item.HowisWonText}</p>
-            <div className="absolute left-3 top-[107px] hidden h-2 w-2 rounded-full bg-white md:block"></div>
+            <div className="absolute left-3 top-[117px] hidden h-2 w-2 rounded-full bg-white md:block"></div>
           </div>
         </div>
       </div>
@@ -81,4 +81,4 @@ const ObukaComponent: React.FC = () => (
   </div>
 );
 
-export default ObukaComponent;
+export default ObukaSecond;
