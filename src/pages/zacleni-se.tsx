@@ -177,6 +177,7 @@ export default function ZacleniSe() {
   const { mutate, status } = useSignUpScout();
 
   const onSubmit: SubmitHandler<SignUpFormInputs> = (data) => {
+    console.log(data);
     mutate(data, {
       onSuccess: () => {
         reset(), toast.success("Успешно се пријавивте!");
