@@ -124,7 +124,7 @@ function Event({ event }: EventProps) {
     <div className="flex w-full">
       <div className="flex w-4/12 flex-col items-center justify-center gap-1 rounded-bl-lg rounded-tl-lg border border-transparent bg-secondary p-2 lg:w-3/12">
         <p>from: {event.start_date}</p>
-        <p>to: </p>
+        <p>to: {event.end_date}</p>
       </div>
 
       <div className="flex w-8/12 items-center justify-between gap-4 rounded-br-2xl rounded-tr-2xl border border-transparent bg-base-100 pl-4 text-base-content lg:w-9/12">

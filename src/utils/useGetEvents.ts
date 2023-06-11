@@ -8,6 +8,7 @@ export type EventType = {
   place: string;
   desc: string;
   start_date: string;
+  end_date: string;
   created_at: Date | null;
   updated_at: Date | null;
 };

@@ -1,7 +1,7 @@
 import { env } from "@/env.mjs";
 import { useQuery } from "@tanstack/react-query";
 
-type Document = {
+export type DocumentType = {
   id: number;
   cat_id: number;
   title: string;
@@ -18,24 +18,16 @@ type Document = {
 };
 
 type DocumentsByCategory = {
-  [category: string]: Document[];
+  [category: string]: DocumentType[];
 };
 
-export type DocumentCategoryType = {
-  id: number;
-  name: string;
-  created_at: Date | null;
-  updated_at: Date | null;
-};
-
-type Data = {
+type Documents = {
   docs: DocumentsByCategory;
-  categories: DocumentCategoryType;
 };
 
 export default function useGetDocuments(
   searchText?: string,
-  selectedDocumentCategory?: string
+  selectedDocumentCategory?: number | null
 ) {
   let queryKey = [
     "documents",
@@ -57,22 +49,22 @@ export default function useGetDocuments(
     }
   }
 
-  async function fetchStudents() {
-    const response = await fetch(
-      `${env.NEXT_PUBLIC_API_BASE_URL}/api/documents`
-    );
+  console.log(`${env.NEXT_PUBLIC_API_BASE_URL}/api/documents${query}`);
 
-    const responseData = await response.json();
+  async function fetchDocuments() {
+    const response = await fetch(`${env.NEXT_PUBLIC_API_BASE_URL}${query}`);
 
     if (!response.ok) {
-      throw new Error("There was an error fetching events!");
+      throw new Error("There was an error fetching the documents!");
     }
+
+    const responseData = await response.json();
 
     return responseData;
   }
 
-  return useQuery<{ categories: DocumentCategoryType[] }>({
-    queryFn: fetchStudents,
+  return useQuery<Documents>({
+    queryFn: fetchDocuments,
     queryKey,
   });
 }
