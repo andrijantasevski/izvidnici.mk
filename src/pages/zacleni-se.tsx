@@ -8,6 +8,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import Button from "@/components/ui/Button";
 import useSignUpScout from "@/utils/useSignUpScout";
 import { toast } from "react-hot-toast";
+import HeaderSection from "@/components/header/Header";
 
 export type SignUpFormInputs = {
   full_name: string;
@@ -191,36 +192,16 @@ export default function ZacleniSe() {
         <title>Зачлени се</title>
       </Head>
       <main>
-        <section className="relative">
-          <Image
-            src="/img/zacleni-se/hero-image.jpg"
-            width={1920}
-            height={536}
-            alt="Два извидника покажуваат знак со нивните раце."
-            className="h-[50vh] w-full object-cover brightness-90 lg:h-[60vh]"
-            priority
-          />
-
-          <h1 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-5xl text-base-100 2xl:text-6xl">
-            Зачлени се
-          </h1>
-        </section>
-
-        <section className="relative flex h-[320px] items-center justify-end">
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-lg">
-            Впушти се во една поинаква авантура, стани дел од извидничкото
-            семејство, најголемото младинско движење во светот!
-          </div>
-
-          <Image
-            src="/img/zacleni-se/second-section-pattern.svg"
-            width={320}
-            height={320}
-            priority
-            alt="Pattern"
-            className="hidden lg:block"
-          />
-        </section>
+      <HeaderSection
+          title=" Зачлени се"
+          imageSrc="/img/zacleni-se/hero-image.jpg"
+          imageAlt="Два извидника покажуваат знак со нивните раце."
+          optionalImageSrc="/img/zacleni-se/second-section-pattern.svg"
+          optionalImageAlt="Pattern"
+          optionalText="  Впушти се во една поинаква авантура, стани дел од извидничкото
+          семејство, најголемото младинско движење во светот! "
+        />
+       
 
         <ZacleniSeVideoSection />
 

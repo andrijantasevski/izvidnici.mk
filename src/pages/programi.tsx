@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import Head from "next/head";
+import HeaderSection from "@/components/header/Header";
 
 const Programi = () => {
   const [currentCard, setCurrentCard] = useState(0);
@@ -59,46 +60,18 @@ const Programi = () => {
       <Head>
         <title>Програми</title>
       </Head>
-      <section className="relative">
-        <Image
-          src="/img/background-images/programi-hero.png"
-          width={1920}
-          height={536}
-          alt="Два извидника покажуваат знак со нивните раце."
-          className="h-[60vh] w-full object-cover brightness-90 lg:h-[60vh]"
-          priority
-        />
-
-        <div className="absolute left-1/2 top-1/2 flex w-full max-w-screen-xl -translate-x-1/2 -translate-y-1/2 flex-col gap-8 text-center text-base-100">
-          <h1 className="text-3xl lg:text-5xl 2xl:text-6xl">
-            ИЗВИДНИЧКА ПРОГРАМА
-          </h1>
-
-          <p className="text-lg">
-            Програма за деца и млади базирана на нивните потреби и стремежи
-          </p>
-        </div>
-      </section>
-
-      {/* TODO */}
-      {/* BETTER SOLUTION FOR FIXED VALUES */}
-      <section className="relative flex h-[420px] items-center justify-end lg:h-[320px]">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-lg">
-          Програмата за деца и млади во извидништвото е збир на образовни
-          можности од кои младите имаат корист (Што), создадени за придонес кон
-          постигнување на целта на извидништвото (Зошто), а се искусени преку
-          извидничкиот метод (Како).
-        </div>
-
-        <Image
-          src="/img/zacleni-se/second-section-pattern.svg"
-          width={320}
-          height={320}
-          priority
-          alt="Pattern"
-          className="hidden lg:block"
-        />
-      </section>
+      <HeaderSection
+        title=" ИЗВИДНИЧКА ПРОГРАМА"
+        subtitle=" Програма за деца и млади базирана на нивните потреби и стремежи"
+        imageSrc="/img/background-images/programi-hero.png"
+        imageAlt="Два извидника покажуваат знак со нивните раце."
+        optionalImageSrc="/img/zacleni-se/second-section-pattern.svg"
+        optionalImageAlt="Pattern"
+        optionalText="Програмата за деца и млади во извидништвото е збир на образовни
+  можности од кои младите имаат корист (Што), создадени за придонес кон
+  постигнување на целта на извидништвото (Зошто), а се искусени преку
+  извидничкиот метод (Како)."
+      />
 
       <section className="hidden bg-primary bg-programi-up-right py-5 lg:block">
         <div className="flex items-center justify-around">
