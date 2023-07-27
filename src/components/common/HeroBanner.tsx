@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-type HeaderSectionProps = {
+type HeroBannerProps = {
   title: string;
   imageSrc: string;
   imageAlt: string;
@@ -10,7 +10,7 @@ type HeaderSectionProps = {
   optionalText?: string;
 };
 
-const HeaderSection: React.FC<HeaderSectionProps> = ({
+export default function HeroBanner({
   title,
   imageSrc,
   imageAlt,
@@ -18,7 +18,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
   optionalImageSrc,
   optionalImageAlt,
   optionalText,
-}) => {
+}: HeroBannerProps) {
   return (
     <>
       <section className="relative">
@@ -62,6 +62,4 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
       </section>
     </>
   );
-};
-
-export default HeaderSection;
+}
