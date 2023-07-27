@@ -10,6 +10,7 @@ import { format } from "date-fns";
 import { env } from "@/env.mjs";
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import upcomingEvents from "../../data/upcoming-events.json";
 
 type EventType = {
   id: number;
@@ -432,13 +433,21 @@ export default function Home({ events }: RazvigorciPageProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const response = await fetch(
-    `${env.API_BASE_URL}/api/events?upcoming&limit=3`
-  );
+  // UNCOMMENT WHEN API WORKS
 
-  const upcomingEvents = await response.json();
+  // const response = await fetch(
+  //   `${env.API_BASE_URL}/api/events?upcoming&limit=3`
+  // );
+
+  // const upcomingEvents = await response.json();
+
+  // return {
+  //   props: { events: upcomingEvents.events },
+  // };
 
   return {
-    props: { events: upcomingEvents.events },
+    props: {
+      events: upcomingEvents,
+    },
   };
 };
