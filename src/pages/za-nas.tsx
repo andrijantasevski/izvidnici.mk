@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Head from "next/head";
-import { IconCircle, IconCircleFilled } from "@tabler/icons-react";
+import { IconCircleFilled } from "@tabler/icons-react";
+import CountUp from "react-countup";
 
 const storyLine = [
   {
@@ -103,23 +104,33 @@ const ZaNas = () => {
 
       <section className="mx-auto flex w-11/12 max-w-screen-xl flex-col justify-between gap-10 py-10 text-center text-2xl font-semibold lg:flex-row lg:py-20">
         <div className="flex flex-col gap-4 uppercase">
-          <p className="text-secondary">70</p>
+          <p className="text-secondary">
+            <CountUp end={70} duration={3.2} />
+          </p>
           <p>години</p>
         </div>
         <div className="flex flex-col gap-4 uppercase">
-          <p className="text-secondary">17</p>
+          <p className="text-secondary">
+            <CountUp end={17} duration={3.2} />
+          </p>
           <p>градови</p>
         </div>
         <div className="flex flex-col gap-4 uppercase">
-          <p className="text-secondary">2500+</p>
+          <p className="text-secondary">
+            <CountUp end={2500} duration={3.2} />+
+          </p>
           <p>членови</p>
         </div>
         <div className="flex flex-col gap-4 uppercase">
-          <p className="text-secondary">280+</p>
+          <p className="text-secondary">
+            <CountUp end={280} duration={3.2} />+
+          </p>
           <p>активисти</p>
         </div>
         <div className="flex flex-col gap-4 uppercase">
-          <p className="text-secondary">52+</p>
+          <p className="text-secondary">
+            <CountUp end={52} duration={3.2} />+
+          </p>
           <p>вештарства</p>
         </div>
       </section>
