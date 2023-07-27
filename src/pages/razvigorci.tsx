@@ -6,6 +6,7 @@ import Head from "next/head";
 import { GetStaticProps, NextPage } from "next";
 import { env } from "@/env.mjs";
 import { format } from "date-fns";
+import HeaderSection from "@/components/header/Header";
 
 export type EventType = {
   id: number;
@@ -31,6 +32,24 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
       <Head>
         <title>Развигорци</title>
       </Head>
+      {/* <HeaderSection
+          title="развигорци"
+          imageSrc="/img/background-images/background-razvigorci-hero.png"
+          imageAlt="Два извидника покажуваат знак со нивните раце."
+          optionalText="   Ја запознаваат природата, учат да ја сакаат и се грижат за неа. Учат
+          како да се снајдат во природата и да станат свесни за нејзините
+          вредности и опасности. Ги познаваат своите права и обврски и развиваат
+          чувство за правда и еднаквост. Го запознаваат, почитуваат и
+          соработуваат со светот во кој што живеат. Слободно ги истражуваат
+          своите мисли и чувства. Се грижат за своето здравје и дух. Се снаоќаат
+          во времето и просторот, креативно истражуваат, ги користат основните
+          технички уреди и средства за комуникација. Ја ценат својата и
+          културата на другите, го прифаќаат кодексот на фино однесување и
+          етиката. Се запознаваат со работата и принципите на организацијата,
+          учествувајќи во изградба на својата патрола, учејќи да го почитуваат,
+          ценат и сакат извидништвото, знаејќи ги своите права и должности во
+          организацијата."
+        /> */}
 
       <section className="relative">
         <Image
@@ -50,7 +69,7 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
       </section>
 
       <section className="mx-auto w-11/12 max-w-screen-xl py-10 lg:py-20">
-        <p className="leading-loose">
+        <p className="leading-loose text-center md:w-10/12 mx-auto w-11/12">
           Ја запознаваат природата, учат да ја сакаат и се грижат за неа. Учат
           како да се снајдат во природата и да станат свесни за нејзините
           вредности и опасности. Ги познаваат своите права и обврски и развиваат
@@ -152,10 +171,10 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
           </div>
         </div>
       </section>
-
+{/* 
       {"/img/razvigorci/nastan-1.png"}
       {"/img/razvigorci/nastan-2.png"}
-      {"/img/razvigorci/nastan-3.png"}
+      {"/img/razvigorci/nastan-3.png"} */}
       <section className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-10 py-20">
         <h2 className="text-center text-3xl font-semibold">СВЕДОШТВА</h2>
 

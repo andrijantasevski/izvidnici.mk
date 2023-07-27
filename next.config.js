@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ["reklama5.mk", "izvidnicimk-production.up.railway.app"],
   },
+  
 };
 
 module.exports = nextConfig;
