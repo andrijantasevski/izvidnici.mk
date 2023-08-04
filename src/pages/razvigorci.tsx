@@ -6,7 +6,8 @@ import Head from "next/head";
 import { GetStaticProps, NextPage } from "next";
 import { env } from "@/env.mjs";
 import { format } from "date-fns";
-import HeaderSection from "@/components/header/Header";
+import HeroBanner from "@/components/common/HeroBanner";
+import upcomingEvents from "../../data/upcoming-events.json";
 
 export type EventType = {
   id: number;
@@ -32,44 +33,15 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
       <Head>
         <title>Развигорци</title>
       </Head>
-      {/* <HeaderSection
-          title="развигорци"
-          imageSrc="/img/background-images/background-razvigorci-hero.png"
-          imageAlt="Два извидника покажуваат знак со нивните раце."
-          optionalText="   Ја запознаваат природата, учат да ја сакаат и се грижат за неа. Учат
-          како да се снајдат во природата и да станат свесни за нејзините
-          вредности и опасности. Ги познаваат своите права и обврски и развиваат
-          чувство за правда и еднаквост. Го запознаваат, почитуваат и
-          соработуваат со светот во кој што живеат. Слободно ги истражуваат
-          своите мисли и чувства. Се грижат за своето здравје и дух. Се снаоќаат
-          во времето и просторот, креативно истражуваат, ги користат основните
-          технички уреди и средства за комуникација. Ја ценат својата и
-          културата на другите, го прифаќаат кодексот на фино однесување и
-          етиката. Се запознаваат со работата и принципите на организацијата,
-          учествувајќи во изградба на својата патрола, учејќи да го почитуваат,
-          ценат и сакат извидништвото, знаејќи ги своите права и должности во
-          организацијата."
-        /> */}
 
-      <section className="relative">
-        <Image
-          src="/img/background-images/background-razvigorci-hero.png"
-          width={1920}
-          height={536}
-          alt="Два извидника покажуваат знак со нивните раце."
-          className="h-[60vh] w-full object-cover brightness-90 lg:h-[60vh]"
-          priority
-        />
-
-        <div className="absolute left-1/2 top-1/2 flex w-full max-w-screen-xl -translate-x-1/2 -translate-y-1/2 flex-col gap-8 text-center text-base-100">
-          <h1 className="text-3xl uppercase lg:text-5xl 2xl:text-6xl">
-            развигорци
-          </h1>
-        </div>
-      </section>
+      <HeroBanner
+        title="развигорци"
+        imageSrc="/img/background-images/background-razvigorci-hero.png"
+        imageAlt="Два извидника покажуваат знак со нивните раце."
+      />
 
       <section className="mx-auto w-11/12 max-w-screen-xl py-10 lg:py-20">
-        <p className="leading-loose text-center md:w-10/12 mx-auto w-11/12">
+        <p className="mx-auto w-11/12 text-center leading-loose md:w-10/12">
           Ја запознаваат природата, учат да ја сакаат и се грижат за неа. Учат
           како да се снајдат во природата и да станат свесни за нејзините
           вредности и опасности. Ги познаваат своите права и обврски и развиваат
@@ -171,7 +143,7 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
           </div>
         </div>
       </section>
-{/* 
+      {/* 
       {"/img/razvigorci/nastan-1.png"}
       {"/img/razvigorci/nastan-2.png"}
       {"/img/razvigorci/nastan-3.png"} */}
@@ -385,14 +357,22 @@ const Razvigorci: NextPage<RazvigorciPageProps> = ({ events }) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const response = await fetch(
-    `${env.API_BASE_URL}/api/events?upcoming&limit=3`
-  );
+  // UNCOMMENT WHEN API WORKS
 
-  const upcomingEvents = await response.json();
+  // const response = await fetch(
+  //   `${env.API_BASE_URL}/api/events?upcoming&limit=3`
+  // );
+
+  // const upcomingEvents = await response.json();
+
+  // return {
+  //   props: { events: upcomingEvents.events },
+  // };
 
   return {
-    props: { events: upcomingEvents.events },
+    props: {
+      events: upcomingEvents,
+    },
   };
 };
 

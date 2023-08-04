@@ -132,9 +132,9 @@ export default function ZaNasPage() {
         <Image
           src="/img/kalendar/pattern.svg"
           width={1920}
-          height={111}
+          height={115}
           alt="Pattern"
-          className="w-full"
+          className="-mb-0.5 w-full"
           priority
         />
       </section>

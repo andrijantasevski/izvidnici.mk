@@ -1,4 +1,5 @@
-import HeaderSection from "@/components/header/Header";
+import HeroBanner from "@/components/common/HeroBanner";
+import HeroDescription from "@/components/common/HeroDescription";
 import ObukaComponent from "@/components/obuka-page/ObukaComponent";
 import ObukaFour from "@/components/obuka-page/ObukaFour";
 import ObukaSecond from "@/components/obuka-page/ObukaSecond";
@@ -15,13 +16,16 @@ export default function obuka() {
       </Head>
 
       <main>
-        <HeaderSection
+        <HeroBanner
           title="ПАТЕКА ЗА ЛИЧЕН РАЗВОЈ ВО ИЗВИДНИШТВОТО"
           imageSrc="/img/obuka-page/obuka.png"
           imageAlt="Два извидника покажуваат знак со нивните раце."
-          optionalImageSrc="/img/obuka-page/obuka.svg"
-          optionalImageAlt="Pattern"
-          optionalText="Покрај областите на личен развој предвидени за категориите развигорци и извидници, за нашите истражувачи, ровери и сениори има креирано прогресивна тренинг рамка која одговара на потребите и стремежите на младите од денешницата. Сојуз на извидници на Македонија продолжува да се залага за креирање на конструктивни индивидуи кои позитивно влијаат и придонесуваат во заедницата во која делуваат."
+        />
+
+        <HeroDescription
+          imageSrc="/img/obuka-page/obuka.svg"
+          imageAlt="Pattern"
+          description="Покрај областите на личен развој предвидени за категориите развигорци и извидници, за нашите истражувачи, ровери и сениори има креирано прогресивна тренинг рамка која одговара на потребите и стремежите на младите од денешницата. Сојуз на извидници на Македонија продолжува да се залага за креирање на конструктивни индивидуи кои позитивно влијаат и придонесуваат во заедницата во која делуваат."
         />
 
         <ObukaComponent />
@@ -31,6 +35,7 @@ export default function obuka() {
         <ObukaThree />
         <SectionBetween />
         <ObukaFour />
+
         <div className=" py-10">
           <h4 className=" py-14 text-center text-xl font-bold md:text-2xl">
             Работен век на еден извидник
