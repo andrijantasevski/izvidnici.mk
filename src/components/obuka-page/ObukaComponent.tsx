@@ -65,7 +65,7 @@ const ObukaComponent: React.FC = () => (
         <div className="mx-auto grid w-10/12 max-w-screen-xl gap-10 py-10 md:grid-cols-3 md:gap-40">
           <div className="relative z-40 mx-auto flex w-11/12  flex-col justify-center space-y-10 rounded-3xl border border-base-100 px-7 py-4 text-white ">
             <div className="ml-4">
-              <h2 className="mb-4 whitespace-nowrap text-xl font-semibold">
+              <h2 className="mb-4  text-xl font-semibold">
                 {item.ForHoItis}
               </h2>
             </div>
