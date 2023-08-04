@@ -3,7 +3,8 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import Head from "next/head";
-import HeaderSection from "@/components/header/Header";
+import HeroBanner from "@/components/common/HeroBanner";
+import HeroDescription from "@/components/common/HeroDescription";
 
 const Programi = () => {
   const [currentCard, setCurrentCard] = useState(0);
@@ -60,14 +61,18 @@ const Programi = () => {
       <Head>
         <title>Програми</title>
       </Head>
-      <HeaderSection
+
+      <HeroBanner
         title=" ИЗВИДНИЧКА ПРОГРАМА"
         subtitle=" Програма за деца и млади базирана на нивните потреби и стремежи"
         imageSrc="/img/background-images/programi-hero.png"
         imageAlt="Два извидника покажуваат знак со нивните раце."
-        optionalImageSrc="/img/zacleni-se/second-section-pattern.svg"
-        optionalImageAlt="Pattern"
-        optionalText="Програмата за деца и млади во извидништвото е збир на образовни
+      />
+
+      <HeroDescription
+        imageSrc="/img/zacleni-se/second-section-pattern.svg"
+        imageAlt="Pattern"
+        description="Програмата за деца и млади во извидништвото е збир на образовни
   можности од кои младите имаат корист (Што), создадени за придонес кон
   постигнување на целта на извидништвото (Зошто), а се искусени преку
   извидничкиот метод (Како)."

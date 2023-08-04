@@ -20,16 +20,8 @@ const headerLinks = [
     href: "/kalendar",
   },
   {
-    title: "информации",
-    href: "/informacii",
-  },
-  {
-    title: "проекти",
-    href: "/proekti",
-  },
-  {
-    title: "блог",
-    href: "/blog",
+    title: "документи",
+    href: "/dokumenti",
   },
   {
     title: "контакт",

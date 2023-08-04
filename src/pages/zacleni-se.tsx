@@ -8,7 +8,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import Button from "@/components/ui/Button";
 import useSignUpScout from "@/utils/useSignUpScout";
 import { toast } from "react-hot-toast";
-import HeaderSection from "@/components/header/Header";
+import HeroBanner from "@/components/common/HeroBanner";
+import HeroDescription from "@/components/common/HeroDescription";
 
 export type SignUpFormInputs = {
   full_name: string;
@@ -192,16 +193,18 @@ export default function ZacleniSe() {
         <title>Зачлени се</title>
       </Head>
       <main>
-      <HeaderSection
-          title=" Зачлени се"
+        <HeroBanner
+          title="Зачлени се"
           imageSrc="/img/zacleni-se/hero-image.jpg"
           imageAlt="Два извидника покажуваат знак со нивните раце."
-          optionalImageSrc="/img/zacleni-se/second-section-pattern.svg"
-          optionalImageAlt="Pattern"
-          optionalText="  Впушти се во една поинаква авантура, стани дел од извидничкото
+        />
+
+        <HeroDescription
+          imageSrc="/img/zacleni-se/second-section-pattern.svg"
+          imageAlt="Pattern"
+          description="Впушти се во една поинаква авантура, стани дел од извидничкото
           семејство, најголемото младинско движење во светот! "
         />
-       
 
         <ZacleniSeVideoSection />
 

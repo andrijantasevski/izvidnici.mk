@@ -3,6 +3,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { IconCircleFilled } from "@tabler/icons-react";
 import CountUp from "react-countup";
+import HeroBanner from "@/components/common/HeroBanner";
 
 const storyLine = [
   {
@@ -81,26 +82,18 @@ function StoryLineItem({ storyLineItem, idx }: StoryLineItemProps) {
   );
 }
 
-const ZaNas = () => {
+export default function ZaNasPage() {
   return (
     <>
       <Head>
         <title>За нас</title>
       </Head>
-      <section className="relative">
-        <Image
-          src="/img/background-images/about-hero.png"
-          width={1920}
-          height={536}
-          alt="Два извидника покажуваат знак со нивните раце."
-          className="h-[50vh] w-full object-cover brightness-75 lg:h-[60vh]"
-          priority
-        />
 
-        <h1 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-5xl text-base-100 2xl:text-6xl">
-          Зачлени се
-        </h1>
-      </section>
+      <HeroBanner
+        imageSrc="/img/background-images/about-hero.png"
+        imageAlt="Два извидника покажуваат знак со нивните раце."
+        title="За нас"
+      />
 
       <section className="mx-auto flex w-11/12 max-w-screen-xl flex-col justify-between gap-10 py-10 text-center text-2xl font-semibold lg:flex-row lg:py-20">
         <div className="flex flex-col gap-4 uppercase">
@@ -139,9 +132,9 @@ const ZaNas = () => {
         <Image
           src="/img/kalendar/pattern.svg"
           width={1920}
-          height={111}
+          height={115}
           alt="Pattern"
-          className="w-full"
+          className="-mb-0.5 w-full"
           priority
         />
       </section>
@@ -259,6 +252,4 @@ const ZaNas = () => {
       </section>
     </>
   );
-};
-
-export default ZaNas;
+}
