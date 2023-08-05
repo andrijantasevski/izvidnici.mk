@@ -1,5 +1,5 @@
 import React from "react";
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import programmesPDFsParsed from "../../../data/programmes";
 
@@ -7,14 +7,17 @@ export default function ProgrammesSlider() {
   const splideOptions = {
     type: "loop",
     perPage: 4,
-
+    gap: "2rem",
     breakpoints: {
       768: {
         perPage: 1,
       },
     },
     pagination: false,
-    // autoWidth: true,
+  };
+
+  const handleImageClick = (pdfUrl: string) => {
+    window.open(pdfUrl, "_blank");
   };
 
   return (
@@ -23,13 +26,12 @@ export default function ProgrammesSlider() {
         <Splide options={splideOptions}>
           {programmesPDFsParsed.map((programme) => (
             <SplideSlide key={programme.id}>
-              <a href="/">
-                <img
-                  src={programme.pdfImageSrc}
-                  alt={`Programme ${programme.id}`}
-                  className="mx-auto h-auto w-56 rounded-md object-fill shadow-lg transition-shadow hover:shadow-xl"
-                />
-              </a>
+              <img
+                src={programme.pdfImageSrc}
+                alt={`Programme ${programme.id}`}
+                className="mx-auto h-auto w-56 cursor-pointer rounded-md shadow-lg transition-shadow hover:shadow-xl"
+                onClick={() => handleImageClick(programme.pdfUrl)}
+              />
             </SplideSlide>
           ))}
         </Splide>
