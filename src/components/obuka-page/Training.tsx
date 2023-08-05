@@ -51,7 +51,7 @@ export default function Training({ training }: TrainingComponentProps) {
         </div>
 
         <div className="flex flex-col justify-between gap-10 lg:flex-row lg:gap-40">
-          <div className="relative flex w-full flex-col justify-start gap-4 rounded-3xl border border-base-100 p-8 text-base-100 lg:w-5/12">
+          <div className="relative flex w-full flex-col justify-center gap-4 rounded-3xl border border-base-100 p-8 text-base-100 lg:w-5/12">
             <h2 className="text-xl font-semibold uppercase">
               за кого е наменета
             </h2>
