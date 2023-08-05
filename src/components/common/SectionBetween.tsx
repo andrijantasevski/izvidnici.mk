@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+// TODO
+// CHANGE COMPONENT NAME TO BE MORE IDIOMATIC AND CORRECT
+
 export default function SectionBetween() {
   return (
     <section className="flex justify-center pt-10 lg:justify-between">

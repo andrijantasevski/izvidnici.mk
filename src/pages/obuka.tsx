@@ -1,10 +1,10 @@
 import HeroBanner from "@/components/common/HeroBanner";
 import HeroDescription from "@/components/common/HeroDescription";
-import SectionBetween from "@/components/obuka-page/SectionBetween";
+import SectionBetween from "@/components/common/SectionBetween";
 import Head from "next/head";
 import Image from "next/image";
 import trainingDataParsed from "../../data/training";
-import TrainingComponent from "@/components/obuka-page/Training";
+import Training from "@/components/obuka-page/Training";
 import { Fragment } from "react";
 
 export default function Obuka() {
@@ -29,7 +29,7 @@ export default function Obuka() {
 
         {trainingDataParsed.map((training, idx) => (
           <Fragment key={training.id}>
-            <TrainingComponent training={training} />
+            <Training training={training} />
 
             {idx + 1 < trainingDataParsed.length && <SectionBetween />}
           </Fragment>
