@@ -19,14 +19,69 @@ const programmesPDFsArraySchema = z.array(programmesPDFsSchema);
 const programmesPDFs = [
   {
     id: 1,
-    pdfURL: "...",
-    pdfImageSrc: "...",
+    pdfUrl: "/img/programi/izvidnici.pdf",
+    pdfImageSrc: "/img/programi/image 172.png",
+  },
+  {
+    id: 2,
+    pdfUrl: "/img/programi/izvidnici.pdf",
+    pdfImageSrc: "/img/programi/image 173.png",
+  },
+  {
+    id: 3,
+    pdfUrl: "/img/programi/izvidnici.pdf",
+    pdfImageSrc: "/img/programi/image 172.png",
+  },
+  {
+    id: 4,
+    pdfUrl: "/img/programi/izvidnici.pdf",
+    pdfImageSrc: "/img/programi/image 173.png",
+  },
+  {
+    id: 5,
+    pdfUrl: "/img/programi/izvidnici.pdf",
+    pdfImageSrc: "/img/programi/image 172.png",
+  },
+  {
+    id: 6,
+    pdfUrl: "/img/programi/izvidnici.pdf",
+    pdfImageSrc: "/img/programi/image 173.png",
+  },
+  {
+    id: 7,
+    pdfUrl: "/img/programi/izvidnici.pdf",
+    pdfImageSrc: "/img/programi/image 172.png",
+  },
+  {
+    id: 8,
+    pdfUrl: "/img/programi/izvidnici.pdf",
+    pdfImageSrc: "/img/programi/image 173.png",
+  },
+  {
+    id: 9,
+    pdfUrl: "/img/programi/izvidnici.pdf",
+    pdfImageSrc: "/img/programi/image 172.png",
   },
 ];
 
 // Parse the data
 
 // Export the parsed data
+
+function parseProgrammesPDFs() {
+  const programmesPDFsParsed =
+    programmesPDFsArraySchema.safeParse(programmesPDFs);
+
+  if (!programmesPDFsParsed.success) {
+    throw new Error(programmesPDFsParsed.error.message);
+  }
+
+  return programmesPDFsParsed.data;
+}
+
+const programmesPDFsParsed = parseProgrammesPDFs();
+
+export default programmesPDFsParsed;
 
 const programmeSchema = z.object({
   id: z.number(),

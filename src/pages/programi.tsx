@@ -5,6 +5,7 @@ import Link from "next/link";
 import Head from "next/head";
 import HeroBanner from "@/components/common/HeroBanner";
 import HeroDescription from "@/components/common/HeroDescription";
+import ProgrammesSlider from "@/components/programmes/ProgrammesSlider";
 
 const Programi = () => {
   const [currentCard, setCurrentCard] = useState(0);
@@ -78,46 +79,7 @@ const Programi = () => {
   извидничкиот метод (Како)."
       />
 
-      <section className="hidden bg-primary bg-programi-up-right py-5 lg:block">
-        <div className="flex items-center justify-around">
-          <div onClick={onPrev}>
-            <Image
-              src={"/img/programi/Mask group.png"}
-              alt="prev"
-              width={50}
-              height={50}
-            />
-          </div>
-          {displayedBlogs.map((img, index) => {
-            return (
-              <Image
-                key={index}
-                src={img}
-                alt="blog"
-                width={250}
-                height={200}
-              />
-            );
-          })}
-          <div onClick={onNext}>
-            <Image
-              src={"/img/programi/Mask group (1).png"}
-              alt="next"
-              width={50}
-              height={50}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-3 hidden justify-center lg:flex">
-        <Image
-          src={"/img/programi/Group 352.png"}
-          alt="img"
-          width={150}
-          height={150}
-        />
-      </section>
+      <ProgrammesSlider />
 
       <section className="mx-auto mt-10 flex w-11/12 max-w-screen-xl flex-col justify-center gap-10">
         <div className="relative flex rounded-lg bg-primary text-base-100">
