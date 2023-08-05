@@ -4,10 +4,10 @@ import SectionBetween from "@/components/obuka-page/SectionBetween";
 import Head from "next/head";
 import Image from "next/image";
 import trainingDataParsed from "../../data/training";
-import TrainingComponent from "@/components/obuka-page/ObukaComponent";
+import TrainingComponent from "@/components/obuka-page/Training";
 import { Fragment } from "react";
 
-export default function obuka() {
+export default function Obuka() {
   return (
     <>
       <Head>
@@ -35,8 +35,8 @@ export default function obuka() {
           </Fragment>
         ))}
 
-        <div className=" py-10">
-          <h4 className=" py-14 text-center text-xl font-bold md:text-2xl">
+        <div className="py-10">
+          <h4 className="py-14 text-center text-xl font-bold md:text-2xl">
             Работен век на еден извидник
           </h4>
 
