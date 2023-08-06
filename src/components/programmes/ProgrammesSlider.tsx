@@ -1,24 +1,27 @@
 import React from "react";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Splide, SplideSlide, Options } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import programmesPDFsParsed from "../../../data/programmes";
 
-export default function ProgrammesSlider() {
-  const splideOptions = {
-    type: "loop",
-    perPage: 4,
-    gap: "1rem",
-    breakpoints: {
-      768: {
-        perPage: 1,
-      },
+const splideOptions: Options = {
+  type: "loop",
+  perPage: 4,
+  gap: "1rem",
+  breakpoints: {
+    1280: {
+      perPage: 3,
     },
-    pagination: false,
-  };
+    768: {
+      perPage: 1,
+    },
+  },
+  pagination: false,
+} satisfies Options;
 
+export default function ProgrammesSlider() {
   return (
     <section className="bg-primary bg-programi-up-right py-10">
-      <div className="container mx-auto">
+      <div className="mx-auto w-11/12 max-w-screen-2xl">
         <Splide options={splideOptions}>
           {programmesPDFsParsed.map((programme) => (
             <SplideSlide
@@ -32,9 +35,10 @@ export default function ProgrammesSlider() {
               >
                 <img
                   src={programme.pdfImageSrc}
+                  // TODO
+                  // MORE DESCRIPTIVE ALT
                   alt={`Programme ${programme.id}`}
-                  //TODO check the sizes of images on mobile
-                  className="mx-auto  h-auto w-64 cursor-pointer rounded-md object-cover shadow-lg transition-shadow hover:shadow-xl md:h-full md:w-full"
+                  className="mx-auto h-auto w-64 cursor-pointer rounded-md object-cover shadow-lg transition-shadow hover:shadow-xl md:h-full md:w-full"
                 />
               </a>
             </SplideSlide>

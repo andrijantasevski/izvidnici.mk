@@ -64,10 +64,6 @@ const programmesPDFs = [
   },
 ];
 
-// Parse the data
-
-// Export the parsed data
-
 function parseProgrammesPDFs() {
   const programmesPDFsParsed =
     programmesPDFsArraySchema.safeParse(programmesPDFs);
