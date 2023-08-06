@@ -3,7 +3,7 @@ import { Splide, SplideSlide, Options } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import programmesPDFsParsed from "../../../data/programmes";
 
-const splideOptions: Options = {
+const splideOptions = {
   type: "loop",
   perPage: 4,
   gap: "1rem",
@@ -20,6 +20,8 @@ const splideOptions: Options = {
 
 export default function ProgrammesSlider() {
   return (
+    // TODO
+    // CHANGE BG BACKGROUND IMAGE WHEN REFACTORING
     <section className="bg-primary bg-programi-up-right py-10">
       <div className="mx-auto w-11/12 max-w-screen-2xl">
         <Splide options={splideOptions}>
