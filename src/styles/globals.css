@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.splide__arrow {
+  background: none !important;
+}
+
+.splide__arrow svg {
+  fill: white !important;
+  height: 5em !important;
+  width: 5em !important;
+}
