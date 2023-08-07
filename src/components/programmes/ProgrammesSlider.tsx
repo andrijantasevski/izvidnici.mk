@@ -1,7 +1,7 @@
 import React from "react";
 import { Splide, SplideSlide, Options } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
-import programmesPDFsParsed from "../../../data/programmes";
+import { programmesPDFsParsed } from "../../../data/programmes";
 
 const splideOptions = {
   type: "loop",
