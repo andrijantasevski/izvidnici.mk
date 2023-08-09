@@ -8,7 +8,6 @@ import { useRouter } from "next/router";
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
@@ -24,7 +23,7 @@ const headerLinks = [
     submenu: [
       {
         title: "Извиднички центри и одреди",
-        href: "/izvidnicki-centri-odredi",
+        href: "/izvidnicki-centri",
       },
       { title: "Обука", href: "/obuka" },
       { title: "Регистар на членови", href: "/registar-clenovi" },
@@ -128,13 +127,25 @@ const ModalNavigationMenu = ({
 
                     <ul className="grid grid-cols-1">
                       {headerLinks.map((headerLink) => (
-                        <NavbarSlideInMenuItem
-                          key={headerLink.href}
-                          closeSlideInMenu={closeSlideInMenu}
-                          href={headerLink.href}
-                        >
-                          {headerLink.title}
-                        </NavbarSlideInMenuItem>
+                        <Fragment key={headerLink.href}>
+                          <NavbarSlideInMenuItem
+                            closeSlideInMenu={closeSlideInMenu}
+                            href={headerLink.href}
+                          >
+                            {headerLink.title}
+                          </NavbarSlideInMenuItem>
+
+                          {headerLink.submenu &&
+                            headerLink.submenu.map((subMenuItem) => (
+                              <NavbarSlideInMenuItem
+                                key={subMenuItem.href}
+                                closeSlideInMenu={closeSlideInMenu}
+                                href={subMenuItem.href}
+                              >
+                                {subMenuItem.title}
+                              </NavbarSlideInMenuItem>
+                            ))}
+                        </Fragment>
                       ))}
                     </ul>
                   </div>
@@ -207,7 +218,8 @@ const Header = () => {
                         {headerLink.submenu?.map((subMenuItem) => (
                           <NavigationMenuLink
                             href={subMenuItem.href}
-                            className="whitespace-nowrap text-black"
+                            className={`whitespace-nowrap text-black ${navigationMenuTriggerStyle()}`}
+                            key={subMenuItem.href}
                           >
                             {subMenuItem.title}
                           </NavigationMenuLink>
