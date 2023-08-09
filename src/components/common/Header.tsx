@@ -5,11 +5,30 @@ import Image from "next/image";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useRouter } from "next/router";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+  navigationMenuTriggerStyle,
+} from "../../components/ui/NavigationMenu ";
 
 const headerLinks = [
   {
     title: "за нас",
     href: "/za-nas",
+    submenu: [
+      {
+        title: "Извиднички центри и одреди",
+        href: "/izvidnicki-centri",
+      },
+      { title: "Обука", href: "/obuka" },
+      { title: "Регистар на членови", href: "/registar-clenovi" },
+      { title: "Документи", href: "/dokumenti" },
+    ],
   },
   {
     title: "програми",
@@ -108,13 +127,25 @@ const ModalNavigationMenu = ({
 
                     <ul className="grid grid-cols-1">
                       {headerLinks.map((headerLink) => (
-                        <NavbarSlideInMenuItem
-                          key={headerLink.href}
-                          closeSlideInMenu={closeSlideInMenu}
-                          href={headerLink.href}
-                        >
-                          {headerLink.title}
-                        </NavbarSlideInMenuItem>
+                        <Fragment key={headerLink.href}>
+                          <NavbarSlideInMenuItem
+                            closeSlideInMenu={closeSlideInMenu}
+                            href={headerLink.href}
+                          >
+                            {headerLink.title}
+                          </NavbarSlideInMenuItem>
+
+                          {headerLink.submenu &&
+                            headerLink.submenu.map((subMenuItem) => (
+                              <NavbarSlideInMenuItem
+                                key={subMenuItem.href}
+                                closeSlideInMenu={closeSlideInMenu}
+                                href={subMenuItem.href}
+                              >
+                                {subMenuItem.title}
+                              </NavbarSlideInMenuItem>
+                            ))}
+                        </Fragment>
                       ))}
                     </ul>
                   </div>
@@ -169,18 +200,35 @@ const Header = () => {
               router.pathname === "/donacija" ? "text-content" : "text-base-100"
             }`}
           >
-            {headerLinks.map((headerLink) => (
-              <Link
-                key={headerLink.href}
-                href={headerLink.href}
-                className={`font-semibold uppercase ${
-                  router.pathname === "/donacija"
-                    ? "hover:text-neutral-600"
-                    : "hover:text-base-200"
-                }`}
-              >
-                {headerLink.title}
-              </Link>
+            {headerLinks.map((headerLink, index) => (
+              <NavigationMenu key={headerLink.href}>
+                <NavigationMenuItem className="list-none">
+                  <NavigationMenuTrigger>
+                    <Link
+                      className={`font-semibold uppercase  hover:text-base-200 `}
+                      href={headerLink.href}
+                    >
+                      {headerLink.title}
+                    </Link>
+                  </NavigationMenuTrigger>
+
+                  {index === 0 && (
+                    <NavigationMenuContent className="  bg-[#D9D9D9] px-5 py-5 ">
+                      <NavigationMenuList className="flex flex-col items-start gap-2">
+                        {headerLink.submenu?.map((subMenuItem) => (
+                          <NavigationMenuLink
+                            href={subMenuItem.href}
+                            className={`whitespace-nowrap text-black ${navigationMenuTriggerStyle()}`}
+                            key={subMenuItem.href}
+                          >
+                            {subMenuItem.title}
+                          </NavigationMenuLink>
+                        ))}
+                      </NavigationMenuList>
+                    </NavigationMenuContent>
+                  )}
+                </NavigationMenuItem>
+              </NavigationMenu>
             ))}
           </div>
 
